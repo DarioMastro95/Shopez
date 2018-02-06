@@ -3,9 +3,218 @@
     padding-top: 30px;
 }
 .bg-primary{
-  background-color: #4ca0fa!important;
+  background-color: #E5007D!important;
 }
-.hr.star-light:after{
+.categoria{
+  display: block;
+  margin-bottom: 15px;
+}
+@media (min-width: 576px) {
+  .categoria{
+    margin-bottom: -30px;
+  }
+  .categoria{
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 575px) {
+  .categoria{
+    margin-bottom: -30px;
+  }
+  .categoria{
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 30px;
+  }
+}
+#MainSlider{
+  margin-top: 150px;
+  width:100%;
+}
+#mainNav .navbar-brand {
   color: #fff;
-  background-color: #4ca0fa;
+}
+
+#mainNav .navbar-nav {
+  margin-top: 1rem;
+  letter-spacing: 0.0625rem;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link {
+  color: #fff;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link:hover {
+  color: #18BC9C;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
+  color: #fff;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link.active {
+  color: #ff008c;
+}
+
+#mainNav .navbar-toggler {
+  font-size: 80%;
+  padding: 0.8rem;
+}
+
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+  }
+  #mainNav .navbar-brand {
+    font-size: 2em;
+    -webkit-transition: font-size 0.3s;
+    -moz-transition: font-size 0.3s;
+    transition: font-size 0.3s;
+  }
+  #mainNav .navbar-nav {
+    margin-top: 0;
+  }
+  #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+    color: #fff;
+    background: #ff008c;
+  }
+  #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+    color: #fff;
+    background: ##mainNav .navbar-brand {
+      color: #fff;
+    }
+
+    #mainNav .navbar-nav {
+      margin-top: 1rem;
+      letter-spacing: 0.0625rem;
+    }
+
+    #mainNav .navbar-nav li.nav-item a.nav-link {
+      color: #fff;
+    }
+
+    #mainNav .navbar-nav li.nav-item a.nav-link:hover {
+      color: #ff008c;
+    }
+
+    #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
+      color: #fff;
+    }
+
+    #mainNav .navbar-nav li.nav-item a.nav-link.active {
+      color: #ff008c;
+    }
+
+    #mainNav .navbar-toggler {
+      font-size: 80%;
+      padding: 0.8rem;
+    }
+
+    @media (min-width: 992px) {
+      #mainNav {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+        -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+        transition: padding-top 0.3s, padding-bottom 0.3s;
+      }
+      #mainNav .navbar-brand {
+        font-size: 2em;
+        -webkit-transition: font-size 0.3s;
+        -moz-transition: font-size 0.3s;
+        transition: font-size 0.3s;
+      }
+      #mainNav .navbar-nav {
+        margin-top: 0;
+      }
+      #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+        color: #fff;
+        background: #ff008c;
+      }
+      #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+        color: #fff;
+        background: ##mainNav .navbar-brand {
+          color: #fff;
+        }
+
+        #mainNav .navbar-nav {
+          margin-top: 1rem;
+          letter-spacing: 0.0625rem;
+        }
+
+        #mainNav .navbar-nav li.nav-item a.nav-link {
+          color: #fff;
+        }
+
+        #mainNav .navbar-nav li.nav-item a.nav-link:hover {
+          color: #ff008c;
+        }
+
+        #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
+          color: #fff;
+        }
+
+        #mainNav .navbar-nav li.nav-item a.nav-link.active {
+          color: #ff008c;
+        }
+
+        #mainNav .navbar-toggler {
+          font-size: 80%;
+          padding: 0.8rem;
+        }
+
+        @media (min-width: 992px) {
+          #mainNav {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+            -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+            transition: padding-top 0.3s, padding-bottom 0.3s;
+          }
+          #mainNav .navbar-brand {
+            font-size: 2em;
+            -webkit-transition: font-size 0.3s;
+            -moz-transition: font-size 0.3s;
+            transition: font-size 0.3s;
+          }
+          #mainNav .navbar-nav {
+            margin-top: 0;
+          }
+          #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+            color: #fff;
+            background: #ff008c;
+          }
+          #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+            color: #fff;
+            background: #ff008c;
+          }
+          #mainNav.navbar-shrink {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+          }
+          #mainNav.navbar-shrink .navbar-brand {
+            font-size: 1.5em;
+          }
+        };
+      }
+      #mainNav.navbar-shrink {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+      #mainNav.navbar-shrink .navbar-brand {
+        font-size: 1.5em;
+      }
+    };
+  }
+  #mainNav.navbar-shrink {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  #mainNav.navbar-shrink .navbar-brand {
+    font-size: 1.5em;
+  }
 }
