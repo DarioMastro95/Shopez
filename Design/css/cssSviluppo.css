@@ -1,0 +1,11 @@
+
+.spacetonav {
+    padding-top: 30px;
+}
+.bg-primary{
+  background-color: #4ca0fa!important;
+}
+.hr.star-light:after{
+  color: #fff;
+  background-color: #4ca0fa;
+}
