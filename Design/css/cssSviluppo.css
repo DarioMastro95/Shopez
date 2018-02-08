@@ -16,7 +16,9 @@ header.masthead {
   display: block;
   margin-bottom: 15px;
   margin-top: 40px;
-
+}
+#logonav{
+  z-index: 9999;
 }
 .title-fascia{
   width:100%;
