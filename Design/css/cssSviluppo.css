@@ -292,8 +292,12 @@ header.masthead {
     background-color: #3e8e41;
 }
 #navbarResponsive{
-  padding-top: 20px;
+  padding-top: 10px;
 }
 li.dropdown.nav-item.mx-0.mx-lg-1{
   height: 40px;
+}
+.footer{
+  height: 250px;
+  padding-top: 0px;
 }
