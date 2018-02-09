@@ -301,3 +301,6 @@ li.dropdown.nav-item.mx-0.mx-lg-1{
   height: 250px;
   padding-top: 0px;
 }
+a:active, a:focus, a:hover {
+    color: #ffffff;
+}
