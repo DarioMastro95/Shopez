@@ -5,6 +5,9 @@
 .bg-primary{
   background-color: #E5007D!important;
 }
+a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
+    background-color: #E5007D!important;
+}
 .smartphone-bg{
   background-color: #2FAC66!important;
 }
@@ -48,14 +51,15 @@ header.masthead {
   }
 }
 
-@media (max-width: 575px) {
+
+@media (max-width: 768px) {
   .categoria{
     margin-bottom: -30px;
     margin-top:50px;
   }
   .categoria{
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 70px;
+    padding-right: 70px;
     margin-bottom: 30px;
   }
   .portfolio {
@@ -84,7 +88,7 @@ header.masthead {
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
-  color: #18BC9C;
+  color: #f7339c;
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
@@ -256,4 +260,40 @@ header.masthead {
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.5em;
   }
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+#navbarResponsive{
+  padding-top: 20px;
+}
+li.dropdown.nav-item.mx-0.mx-lg-1{
+  height: 40px;
 }
