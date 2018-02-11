@@ -55,4 +55,5 @@ $(document).ready(function(){
       },10);
     });
     $('#logonav').addClass('animated pulse');
+
 });
