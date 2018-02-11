@@ -54,6 +54,16 @@ $(document).ready(function(){
         me.style.webkitAnimation ='';
       },10);
     });
+    $('.picture').mouseenter(function(){
+      $('.picture').addClass('animated pulse');
+      var me =this;
+      this.style.webkitAnimation ='none';
+      setTimeout(function(){
+        me.style.webkitAnimation ='';
+      },10);
+    });
+    $('#logonav').addClass('animated pulse');
+
 });
 
 $(window).scroll(function () {
