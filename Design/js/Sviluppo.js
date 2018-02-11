@@ -54,6 +54,12 @@ $(document).ready(function(){
         me.style.webkitAnimation ='';
       },10);
     });
-    $('#logonav').addClass('animated pulse');
-
 });
+
+$(window).scroll(function () {
+     if ($(window).scrollTop() > 100) {
+         $('#block').css({'position': 'fixed', '': ''});
+     } else {
+         $('#block').css({'position': ''});
+     }
+ });
