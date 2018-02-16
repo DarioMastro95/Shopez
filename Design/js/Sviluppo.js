@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $(this).scrollTop(0);
   $('#logonav').mouseenter(function() {
     var me = this;
     this.style.webkitAnimation = 'none';
@@ -217,15 +218,20 @@ Array.from(cls).forEach(function(v) {
   // ==============
 
   $(window).on('scroll', function() {
+    //art1
     var poswind = $(window).scrollTop();
     var posrow = $('#primariga').offset().top;
     var heightrow = $('#primariga').height();
     var rowbottom = $('#primariga').offset().top + heightrow;
     var fixdivbottom = $('.fixdiv').offset().top + $('.fixdiv').height();
-    console.log(posrow-poswind);
-    console.log("pos win:  " + poswind + "> height row: " + posrow);
-    console.log("fixdivbottom:  " + fixdivbottom + "<= rowbottom: " + rowbottom);
+    //art2
+    var poswind1 = $(window).scrollTop()+ $('#secondariga').height();
+    var posrow1 = $('#secondariga').offset().top+posrow;
+    var heightrow1 = $('#secondariga').height();
+    var rowbottom1 = $('#secondariga').offset().top + heightrow;
+    var fixdivbottom1 = $('.fixdiv1').offset().top + $('.fixdiv1').height();
     if((poswind>posrow)&&(fixdivbottom<=rowbottom)){
+      console.log('work1');
       $('.fixdiv').css('position','fixed');
       $('.fixdiv').each(function() {
         var $spy = $(this)
@@ -241,7 +247,26 @@ Array.from(cls).forEach(function(v) {
     }
     else{
       $('.fixdiv').css('position','sticky');
-      console.log('sticky');
+      //console.log('stop1');
+    }
+    if((poswind>posrow1)&&(fixdivbottom1<=rowbottom1)){
+      console.log('work2');
+      $('.fixdiv1').css('position','fixed');
+      $('.fixdiv1').each(function() {
+        var $spy = $(this)
+        var data = $spy.data()
+
+        data.offset = data.offset || {}
+
+        if (data.offsetBottom != null) data.offset.bottom = data.offsetBottom
+        if (data.offsetTop != null) data.offset.top = data.offsetTop
+
+        Plugin.call($spy, data)
+      })
+    }
+    else{
+      $('.fixdiv1').css('position','sticky');
+      console.log('stop2');
     }
   })
 

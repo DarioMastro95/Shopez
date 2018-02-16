@@ -10,11 +10,15 @@
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
   background-color: #E5007D !important;
 }
-
+body{
+  background-color:#f9f9f9;
+}
 .smartphone-bg {
   background-color: #2FAC66 !important;
 }
-
+.spacetoart{
+  margin-top: 8em;
+}
 header.masthead {
   padding-top: calc(2rem + 100px);
   padding-bottom: 3rem;
@@ -91,6 +95,7 @@ header.masthead {
 }
 
 .acquista {
+  padding-top: 2em;
   width: 100%;
   height: 100px;
   position: relative;
@@ -475,6 +480,12 @@ a:active, a:focus, a:hover {
 }
 
 .fixdiv{
+  width: auto;
+  height: auto;
+  position: sticky;
+}
+
+.fixdiv1{
   width: auto;
   height: auto;
   position: sticky;
