@@ -144,12 +144,12 @@ header.masthead {
 
 ul.proUl {
   font-size: 22px;
-  list-style-image: url('../img/proUl.svg');
+  list-style-image: url('../img/icone/proUl.svg');
 }
 
 ul.controUl {
   font-size: 22px;
-  list-style-image: url('../img/controUl.svg');
+  list-style-image: url('../img/icone/controUl.svg');
 }
 
 .schedaTecnica {
