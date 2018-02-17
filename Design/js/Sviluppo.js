@@ -214,9 +214,6 @@ Array.from(cls).forEach(function(v) {
   }
 
 
-  // AFFIX DATA-API
-  // ==============
-
   $(window).on('scroll', function() {
     //art1
     var poswind = $(window).scrollTop();

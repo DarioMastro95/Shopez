@@ -1,5 +1,5 @@
-<style>@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
-</style>.spacetonav {
+<style>@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');</style>
+.spacetonav {
   padding-top: 30px;
 }
 
@@ -10,15 +10,23 @@
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
   background-color: #E5007D !important;
 }
-body{
-  background-color:#f9f9f9;
+
+.imgart{
+  width: auto;
 }
+
+body {
+  background-color: #f9f9f9;
+}
+
 .smartphone-bg {
   background-color: #2FAC66 !important;
 }
-.spacetoart{
+
+.spacetoart {
   margin-top: 8em;
 }
+
 header.masthead {
   padding-top: calc(2rem + 100px);
   padding-bottom: 3rem;
@@ -479,13 +487,13 @@ a:active, a:focus, a:hover {
   margin-left: 0px;
 }
 
-.fixdiv{
+.fixdiv {
   width: auto;
   height: auto;
   position: sticky;
 }
 
-.fixdiv1{
+.fixdiv1 {
   width: auto;
   height: auto;
   position: sticky;
