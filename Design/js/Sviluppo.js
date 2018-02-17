@@ -7,6 +7,30 @@ $(document).ready(function() {
       me.style.webkitAnimation = '';
     }, 10);
   });
+  $('#basso').mouseenter(function() {
+    $('#basso').addClass('animated pulse');
+    var me = this;
+    this.style.webkitAnimation = 'none';
+    setTimeout(function() {
+      me.style.webkitAnimation = '';
+    }, 10);
+  });
+  $('#medio').mouseenter(function() {
+    $('#medio').addClass('animated pulse');
+    var me = this;
+    this.style.webkitAnimation = 'none';
+    setTimeout(function() {
+      me.style.webkitAnimation = '';
+    }, 10);
+  });
+  $('#top').mouseenter(function() {
+    $('#top').addClass('animated pulse');
+    var me = this;
+    this.style.webkitAnimation = 'none';
+    setTimeout(function() {
+      me.style.webkitAnimation = '';
+    }, 10);
+  });
   $('#smart').mouseenter(function() {
     $('#smart').addClass('animated pulse');
     var me = this;
@@ -212,7 +236,6 @@ Array.from(cls).forEach(function(v) {
     $.fn.affix = old
     return this
   }
-
 
   $(window).on('scroll', function() {
     //art1

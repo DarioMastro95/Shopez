@@ -15,6 +15,13 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
   width: auto;
 }
 
+.form-control:focus{
+  background-color: #f9f9f9;
+}
+.titoloContatti{
+  margin-bottom: 3em;
+}
+
 body {
   background-color: #f9f9f9;
 }
