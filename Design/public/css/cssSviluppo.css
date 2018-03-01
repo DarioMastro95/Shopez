@@ -11,6 +11,20 @@
   margin-top: 10em;
 }
 
+.formDashboard{
+  width:100%;
+}
+
+.admindivdashl{
+  padding-right:10px;
+}
+
+.admindivdashr{
+  padding-left:10px;
+}
+.dashboard{
+  margin-top: 10em;
+}
 .form-group{
   margin-top:2em;
 }
@@ -185,6 +199,12 @@ ul.controUl {
   font-size: 18px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+}
+
+.fontForm{
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
 
 .carrow {

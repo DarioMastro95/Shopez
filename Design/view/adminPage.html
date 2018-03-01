@@ -1,10 +1,168 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    dashboard
-  </body>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>SHOPEZ</title>
+  <link rel="icon" href="img/logo/Icona.png" />
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+  <link href="css/social.css" rel="stylesheet">
+  <link href="css/freelancer.min.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/cssSviluppo.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+    <div class="container">
+      <a id="logonav" class="navbar-brand js-scroll-trigger" href="index.html">
+        <svg class="d-none d-sm-block" width="300" height="60">
+          <image xlink:href="img/logo/Logofull.svg" src="img/logo/logonav.png" width="300" height="60" />
+        </svg>
+        <svg  class="d-block d-sm-none"  width="150" height="60">
+          <image xlink:href="img/logo/Logomobile.svg" src="img/logo/logonavmobile.png" width="150" height="60" />
+        </svg>
+      </a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="dashboard">
+      <center><h1>Admin dashboard</h1></center>
+      <div class="row">
+        <form class="formDashboard fontForm">
+          <div class="form-group">
+            <label for="titolo">Titolo</label>
+            <input type="text" class="form-control" id="titolo" aria-describedby="" placeholder="Titolo">
+          </div>
+          <div class="form-group">
+            <label for="Categoria">Categoria</label>
+            <select class="form-control" id="Categoria">
+              <option>Smartphone</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="immagine">Immagine</label>
+            <input type="text" class="form-control" id="immagine" aria-describedby="" placeholder="Url immagine">
+          </div>
+          <div class="form-group">
+            <label for="recensione">Recensione</label>
+            <textarea class="form-control" id="recensione" rows="10"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="link">Link amazon</label>
+            <input type="text" class="form-control" id="link" aria-describedby="" placeholder="link amazon">
+          </div>
+        </form>
+        <div class="col-lg-6">
+          <form class="formDashboard admindivdashl fontForm">
+            <div class="form-group">
+              <label for="batteria">Batteria</label>
+              <input type="text" class="form-control" id="batteria" aria-describedby="" placeholder="caratteristiche batteria">
+            </div>
+            <div class="form-group">
+              <label for="display">Display</label>
+              <input type="text" class="form-control" id="display" aria-describedby="" placeholder="caratteristiche display">
+            </div>
+            <div class="form-group">
+              <label for="memoria">Memoria</label>
+              <input type="text" class="form-control" id="memoria" aria-describedby="" placeholder="caratteristiche memoria">
+            </div>
+            <div class="form-group">
+              <label for="processore">Processore</label>
+              <input type="text" class="form-control" id="processore" aria-describedby="" placeholder="caratteristiche processore">
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-6">
+          <form class="formDashboard admindivdashr fontForm">
+            <div class="form-group">
+              <label for="fotocamera">Fotocamera</label>
+              <input type="text" class="form-control" id="fotocamera" aria-describedby="" placeholder="caratteristiche fotocamera">
+            </div>
+            <div class="form-group">
+              <label for="ram">Ram</label>
+              <input type="text" class="form-control" id="ram" aria-describedby="" placeholder="caratteristiche Ram">
+            </div>
+            <div class="form-group">
+              <label for="rete">Rete</label>
+              <input type="text" class="form-control" id="rete" aria-describedby="" placeholder="caratteristiche rete">
+            </div>
+            <div class="form-group">
+              <label for="so">Sistema operativo</label>
+              <input type="text" class="form-control" id="so" aria-describedby="" placeholder="caratteristiche sistema operativo">
+            </div>
+          </form>
+        </div>
+        <form class="formDashboard fontForm">
+          <div class="form-group">
+            <label for="pro">Pro</label>
+            <input type="text" class="form-control" id="pro" aria-describedby="" placeholder="pro,pro,pro,...">
+          </div>
+          <div class="form-group">
+            <label for="contro">Contro</label>
+            <input type="text" class="form-control" id="contro" aria-describedby="" placeholder="contro,contro,contro,...">
+          </div>
+          <div class="form-group">
+            <label for="fascia">Fascia smartphone</label>
+            <select class="form-control" id="fascia">
+              <option>Fascia alta</option>
+              <option>Fascia media</option>
+              <option>Fascia bassa</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="position">Posizione</label>
+            <select class="form-control" id="position">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div class="form-group">
+          <center>
+            <button type="submit" class="btn btn-primary btn-xl" id="buttonLoadArt">Carica articolo</button>
+          </center>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="spacetoart"></div>
+  <div class="scroll-to-top d-lg-none position-fixed ">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+      </a>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+
+  <!-- Contact Form JavaScript -->
+  <script src="js/Sviluppo.js"></script>
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/freelancer.min.js"></script>
+  <script src="js/login.js"></script>
+</body>
+
 </html>
