@@ -3,7 +3,6 @@ $(document).ready(function() {
     event.preventDefault();
     var username = $('#user').val();
     var password = $('#password').val();
-    console.log(username+' '+password);
     $.post(
       '/login',
       {username: username,password: password},
