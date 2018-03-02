@@ -13,6 +13,27 @@ router.get('/dashboard',function(req,res){
   res.sendFile(path.join(__dirname,'..','view','adminPage.html'));
 });
 
+router.get('/home/migliorismartphone/smartphonetop',function(req,res){
+  res.sendFile(path.join(__dirname,'..','public','smartphoneTop.html'));
+});
+
+router.get('/smartphone/:fascia',function(req,res){
+    var fasciaSmartphone = req.params.fascia;
+    var fascia;
+    switch (fascia) {
+      case 'Fasciaalta':
+        fascia = 'Fascia alta';
+        break;
+      default:
+
+    }
+    Smartphone.find({fascia:fascia},function(err,smartphones) {
+        if(err){
+          return res.send('Nessuno Smartphone')
+        }
+    });
+});
+
 router.post('/smartphone',function(req,res){
   if(!req.session.user){
     return res.status(400).send();
