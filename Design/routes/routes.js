@@ -4,7 +4,9 @@ var router = express.Router();
 var Smartphone = require('../mongoSchemi/Smartphone');
 var User = require('../mongoSchemi/User');
 
+//servizi
 
+//dashboard
 router.get('/dashboard',function(req,res){
   if(!req.session.user){
     return res.status(400).send();
@@ -12,15 +14,15 @@ router.get('/dashboard',function(req,res){
   res.setHeader('Content-Type','text/html');
   res.sendFile(path.join(__dirname,'..','view','adminPage.html'));
 });
-
+//get pagina articoli
 router.get('/home/migliorismartphone/smartphonetop',function(req,res){
   res.sendFile(path.join(__dirname,'..','public','smartphoneTop.html'));
 });
-
+//get smartphone in base alla fascia
 router.get('/smartphone/:fascia',function(req,res){
     var fasciaSmartphone = req.params.fascia;
     var fascia;
-    switch (fascia) {
+    switch (fasciaSmartphone) {
       case 'Fasciaalta':
         fascia = 'Fascia alta';
         break;
@@ -31,9 +33,10 @@ router.get('/smartphone/:fascia',function(req,res){
         if(err){
           return res.send('Nessuno Smartphone')
         }
+        return res.send(smartphones);
     });
 });
-
+// post smartphone in db
 router.post('/smartphone',function(req,res){
   if(!req.session.user){
     return res.status(400).send();
@@ -86,11 +89,10 @@ router.post('/smartphone',function(req,res){
   });
 
 });
-
+//login in admin dashboard
 router.post('/login',function(req,res){
   var username = req.body.username;
   var password = req.body.password;
-  console.log(username+' '+password);
   User.findOne({username:username,password:password},function(err,user){
     if(err || !user){
       console.log('Errore login');

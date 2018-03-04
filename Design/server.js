@@ -14,8 +14,4 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(session({secret:'jskdjsdksjdksjdkksdj',resave:false,saveUninitilized:true}));
 app.use('/',routes);
 app.listen(port,function(){
-  var user = new User();
-  user.username= 'admin';
-  user.password='ferrari';
-  user.save();
 });
