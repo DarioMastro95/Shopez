@@ -18,6 +18,18 @@ router.get('/dashboard',function(req,res){
 router.get('/home/migliorismartphone/smartphonetop',function(req,res){
   res.sendFile(path.join(__dirname,'..','public','smartphoneTop.html'));
 });
+// get home
+router.get('/home',function(req,res){
+  res.sendFile(path.join(__dirname,'..','public','index.html'));
+});
+//get scelta smartphone
+router.get('/home/migliorismartphone',function(req,res){
+  res.sendFile(path.join(__dirname,'..','public','migliorismartphone2018.html'));
+});
+//get contatti
+router.get('/home/contatti',function(req,res){
+  res.sendFile(path.join(__dirname,'..','public','contatti.html'));
+});
 //get smartphone in base alla fascia
 router.get('/smartphone/:fascia',function(req,res){
     var fasciaSmartphone = req.params.fascia;

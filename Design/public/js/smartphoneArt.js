@@ -9,6 +9,18 @@ $(document).ready(function() {
             case 0:
               parent = '#primariga'
               break;
+            case 1:
+              parent = '#secondariga'
+              break;
+            case 2:
+              parent = '#terzariga'
+              break;
+            case 3:
+              parent = '#quartariga'
+              break;
+            case 4:
+              parent = '#quintariga'
+              break;
             default:
 
           }
