@@ -14,9 +14,17 @@ router.get('/dashboard',function(req,res){
   res.setHeader('Content-Type','text/html');
   res.sendFile(path.join(__dirname,'..','view','adminPage.html'));
 });
-//get pagina articoli
+//get smartphoneTop
 router.get('/home/migliorismartphone/smartphonetop',function(req,res){
   res.sendFile(path.join(__dirname,'..','public','smartphoneTop.html'));
+});
+//get smartphoneMedi
+router.get('/home/migliorismartphone/smartphonemedi',function(req,res){
+  res.sendFile(path.join(__dirname,'..','public','smartphoneMedi.html'));
+});
+//get smartphoneBassi
+router.get('/home/migliorismartphone/smartphonebassi',function(req,res){
+  res.sendFile(path.join(__dirname,'..','public','smartphoneBassi.html'));
 });
 // get home
 router.get('/home',function(req,res){
@@ -24,7 +32,7 @@ router.get('/home',function(req,res){
 });
 //get scelta smartphone
 router.get('/home/migliorismartphone',function(req,res){
-  res.sendFile(path.join(__dirname,'..','public','migliorismartphone2018.html'));
+  res.sendFile(path.join(__dirname,'..','public','migliorismartphone.html'));
 });
 //get contatti
 router.get('/home/contatti',function(req,res){
@@ -37,6 +45,12 @@ router.get('/smartphone/:fascia',function(req,res){
     switch (fasciaSmartphone) {
       case 'Fasciaalta':
         fascia = 'Fascia alta';
+        break;
+      case 'Fasciamedia':
+        fascia = 'Fascia media';
+        break;
+      case 'Fasciabassa':
+        fascia = 'Fascia bassa';
         break;
       default:
 
