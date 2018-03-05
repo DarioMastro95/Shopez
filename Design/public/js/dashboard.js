@@ -36,4 +36,13 @@ $(document).ready(function() {
       element.reset();
     })
   });
+  $('#bold').click(function(event) {
+    $('#recensione').val($('#recensione').val()+('<b></b>'));
+  });
+  $('#italic').click(function(event) {
+    $('#recensione').val($('#recensione').val()+('<i></i>'));
+  });
+  $('#puntato').click(function(event) {
+    $('#recensione').val($('#recensione').val()+('<ul><li></li></ul>'));
+  });
 });

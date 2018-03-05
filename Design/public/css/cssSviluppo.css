@@ -7,6 +7,12 @@
   background-color: #E5007D !important;
 }
 
+.textformat{
+  height: 30px;
+  width: 50px;
+  margin-bottom: 1em;
+}
+
 .loginForm {
   margin-top: 10em;
 }
@@ -214,6 +220,7 @@ ul.controUl {
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .carrow {

@@ -23,12 +23,12 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
     <div class="container">
-      <a id="logonav" class="navbar-brand js-scroll-trigger" href="index.html">
+      <a id="logonav" class="navbar-brand js-scroll-trigger" href="/home">
         <svg class="d-none d-sm-block" width="300" height="60">
-          <image xlink:href="img/logo/Logofull.svg" src="img/logo/logonav.png" width="300" height="60" />
+          <image xlink:href="/img/logo/Logofull.svg" src="/img/logo/logonav.png" width="300" height="60" />
         </svg>
         <svg  class="d-block d-sm-none"  width="150" height="60">
-          <image xlink:href="img/logo/Logomobile.svg" src="img/logo/logonavmobile.png" width="150" height="60" />
+          <image xlink:href="/img/logo/Logomobile.svg" src="/img/logo/logonavmobile.png" width="150" height="60" />
         </svg>
       </a>
     </div>
@@ -53,8 +53,17 @@
             <label for="immagine">Immagine</label>
             <input type="text" class="form-control" id="immagine" aria-describedby="" placeholder="Url immagine">
           </div>
-          <div class="form-group">
+          <div id="formrecensione"class="form-group">
+            <div class="">
+            </div>
             <label for="recensione">Recensione</label>
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" id="bold" class="textformat" name="button"><img width="30" height="15" src="/img/icone/bold.svg"/></button>
+                    <button type="button" id="italic" class="textformat" name="button"><img width="30" height="15" src="/img/icone/italic.svg"/></button>
+                    <button type="button" id="puntato" class="textformat" name="button"><img width="30" height="15" src="/img/icone/puntato.svg"/></button>
+                </div>
+            </div>
             <textarea class="form-control" id="recensione" rows="10"></textarea>
           </div>
           <div class="form-group">
