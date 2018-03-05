@@ -1,5 +1,5 @@
-<style>@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');</style>
-.spacetonav {
+<style>@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500');
+</style>.spacetonav {
   padding-top: 30px;
 }
 
@@ -7,40 +7,43 @@
   background-color: #E5007D !important;
 }
 
-.loginForm{
+.loginForm {
   margin-top: 10em;
 }
 
-.formDashboard{
-  width:100%;
+.formDashboard {
+  width: 100%;
 }
 
-.admindivdashl{
-  padding-right:10px;
+.admindivdashl {
+  padding-right: 10px;
 }
 
-.admindivdashr{
-  padding-left:10px;
+.admindivdashr {
+  padding-left: 10px;
 }
-.dashboard{
+
+.dashboard {
   margin-top: 10em;
 }
-.form-group{
-  margin-top:2em;
+
+.form-group {
+  margin-top: 2em;
 }
 
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
   background-color: #E5007D !important;
 }
 
-.imgart{
+.imgart {
   width: auto;
 }
 
-.form-control:focus{
+.form-control:focus {
   background-color: #f9f9f9;
 }
-.titoloContatti{
+
+.titoloContatti {
   margin-top: 3em;
   margin-bottom: 5em;
   text-align: center;
@@ -107,7 +110,7 @@ header.masthead {
 
 .recensione::-webkit-scrollbar {
   width: 0 !important;
-  overflow-y:scroll;
+  overflow-y: scroll;
 }
 
 .titolo {
@@ -152,7 +155,7 @@ header.masthead {
   padding-right: 0.5em;
   text-align: justify;
   overflow-y: hidden;
-  overflow-y:scroll;
+  overflow-y: scroll;
   height: 400px;
   font-family: 'Montserrat', sans-serif;
 }
@@ -207,7 +210,7 @@ ul.controUl {
   font-weight: 700;
 }
 
-.fontForm{
+.fontForm {
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -258,6 +261,12 @@ ul.controUl {
   .sidebar {
     position: fixed;
   }
+  .acquista {
+    padding-top: 2em;
+    width: 100%;
+    height: 100px;
+    position: relative;
+  }
 }
 
 @media (max-width: 768px) {
@@ -276,6 +285,12 @@ ul.controUl {
   }
   .portfolio .portfolio-item {
     margin-bottom: 20px;
+  }
+  .acquista {
+    padding-top: 2em;
+    width: 100%;
+    height: 100px;
+    position: relative;
   }
 }
 
@@ -547,4 +562,13 @@ a:active, a:focus, a:hover {
 
 .affix-bottom {
   position: absolute;
+}
+
+@media (max-width: 576px) {
+  .left {
+    margin-left: 0px;
+  }
+  h1 {
+    font-size: 28px;
+  }
 }
