@@ -49,6 +49,20 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
   background-color: #f9f9f9;
 }
 
+.dashChoseIns{
+  padding-top: 6em;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 5em;
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-bottom: 2em;
+  height: 15em;
+  width: auto;
+  background-color: #E5007D;
+}
+
+
 .titoloContatti {
   margin-top: 3em;
   margin-bottom: 5em;
@@ -136,6 +150,13 @@ header.masthead {
   width: 100%;
   text-align: center;
   margin-bottom: 1em;
+  margin-top: 2em;
+  text-transform: uppercase;
+}
+
+.subtitoloGuida {
+  width: 100%;
+  text-align: center;
   margin-top: 2em;
   text-transform: uppercase;
 }
@@ -567,6 +588,59 @@ a:active, a:focus, a:hover {
   top: 7rem;
 }
 
+.prevGuida{
+  margin-top: 1em;
+  margin-bottom: 2em;
+  height: 10em;
+  width: auto;
+}
+
+.guidaPre{
+  width: auto;
+}
+
+.guida{
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.testoPrev{
+  padding-left: 1.5em;
+  padding-right: 1em;
+  font-family: 'Montserrat', sans-serif;
+  text-align: justify;
+  font-size: 18px;
+}
+
+.vaiGuida {
+  padding-right: 1em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: 2em;
+  text-align: right;
+}
+
+.vaiGuida a{
+  color: #111111;
+}
+
+.dataGuida{
+  margin-top: 2em;
+  padding-left: 1.5em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.imgPrevguida{
+  border-radius: 10px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  height: 10em;
+  width: auto;
+}
+
 .affix-bottom {
   position: absolute;
 }
@@ -579,3 +653,5 @@ a:active, a:focus, a:hover {
     font-size: 28px;
   }
 }
+a {
+  color: #ffffff; }

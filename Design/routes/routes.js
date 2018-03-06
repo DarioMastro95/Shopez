@@ -14,6 +14,26 @@ router.get('/dashboard',function(req,res){
   res.setHeader('Content-Type','text/html');
   res.sendFile(path.join(__dirname,'..','view','adminPage.html'));
 });
+//get nuovoarticolo dash
+router.get('/dashboard/nuovoarticolo',function(req,res){
+  if(!req.session.user){
+    return res.status(400).send();
+  }
+  res.setHeader('Content-Type','text/html');
+  res.sendFile(path.join(__dirname,'..','view','adminArt.html'));
+});
+//get nuovaguida dash
+router.get('/dashboard/nuovaGuida',function(req,res){
+  if(!req.session.user){
+    return res.status(400).send();
+  }
+  res.setHeader('Content-Type','text/html');
+  res.sendFile(path.join(__dirname,'..','view','adminGuida.html'));
+});
+//get guide tech
+router.get('/home/guideacquistotech',function(req,res){
+  res.sendFile(path.join(__dirname,'..','public','guideTech.html'));
+});
 //get smartphoneTop
 router.get('/home/migliorismartphone/smartphonetop',function(req,res){
   res.sendFile(path.join(__dirname,'..','public','smartphoneTop.html'));
