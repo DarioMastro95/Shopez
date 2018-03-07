@@ -6,7 +6,11 @@
 .bg-primary {
   background-color: #E5007D !important;
 }
-
+.separate{
+  margin-top: 3em;
+  margin-bottom:3em;
+  text-align: center;
+}
 .textformat{
   height: 30px;
   width: 50px;
@@ -622,7 +626,7 @@ a:active, a:focus, a:hover {
 }
 
 .vaiGuida a{
-  color: #111111;
+  color: #E5007D;
 }
 
 .dataGuida{

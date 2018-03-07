@@ -2,10 +2,14 @@ var express = require('express');
 var path = require('path');
 var router = express.Router();
 var Smartphone = require('../mongoSchemi/Smartphone');
+var GuidaTech = require('../mongoSchemi/guidaTech');
+var GuidaSalute = require('../mongoSchemi/guidaSalute');
+var GuidaFinanza = require('../mongoSchemi/guidaFinanza');
 var User = require('../mongoSchemi/User');
 
-//servizi
 
+
+//********************************************get pagine**********************************************
 //dashboard
 router.get('/dashboard',function(req,res){
   if(!req.session.user){
@@ -58,6 +62,10 @@ router.get('/home/migliorismartphone',function(req,res){
 router.get('/home/contatti',function(req,res){
   res.sendFile(path.join(__dirname,'..','public','contatti.html'));
 });
+//***********************************************************************************************
+
+//*****************************************Smartphone********************************************
+
 //get smartphone in base alla fascia
 router.get('/smartphone/:fascia',function(req,res){
     var fasciaSmartphone = req.params.fascia;
@@ -135,6 +143,33 @@ router.post('/smartphone',function(req,res){
   });
 
 });
+//**************************************************************************************************
+
+//*****************************************Guide Tech**************************************************
+router.post('/anteprimaGuida',function(req,res){
+  if(!req.session.user){
+    return res.status(400).send();
+  }
+  var titolo = req.body.titolo;
+  GuidaTech.findOne({titolo:titolo},function(err,findedGuida){
+    if(err){
+      return res.send({success:false,extra:err.toString()});
+    }
+    if(findedGuida){
+      return res.send({success:true,extra:'Guida già inserita'});
+    }
+    var guidaTech = new GuidaTech();
+    guidaTech.titolo = req.body.titolo;
+
+    smartphone.save();
+    return res.send({success:true,extra:'Nuovo guida tech inserita'});
+  });
+
+});
+
+
+
+//****************************************Login page ***********************************************
 //login in admin dashboard
 router.post('/login',function(req,res){
   var username = req.body.username;

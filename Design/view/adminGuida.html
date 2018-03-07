@@ -37,7 +37,51 @@
   <div class="container">
     <div class="dashboard">
       <center><h1>Nuova guida acquisto</h1></center>
-
+      <div class="row">
+        <form class="formDashboard fontForm">
+          <div class="form-group">
+            <label for="titolo">Titolo</label>
+            <input type="text" class="form-control" id="titolo" aria-describedby="" placeholder="Titolo">
+          </div>
+          <div class="form-group">
+            <label for="tipoGuida">Categoria</label>
+            <select class="form-control" id="tipoGuida">
+              <option>Tecnologia</option>
+              <option>Salute</option>
+              <option>Finanza</option>
+            </select>
+          </div>
+          <div class="separate">
+            <h5>Anteprima</h5>
+          </div>
+          <div class="form-group">
+            <label for="immagine">Immagine</label>
+            <input type="text" class="form-control" id="immagine" aria-describedby="" placeholder="Url immagine">
+          </div>
+          <div id="formrecensione"class="form-group">
+            <div class="">
+            </div>
+            <label for="anteprima">Preview</label>
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" id="bold" class="textformat" name="button"><img width="30" height="15" src="/img/icone/bold.svg"/></button>
+                    <button type="button" id="italic" class="textformat" name="button"><img width="30" height="15" src="/img/icone/italic.svg"/></button>
+                    <button type="button" id="puntato" class="textformat" name="button"><img width="30" height="15" src="/img/icone/puntato.svg"/></button>
+                </div>
+            </div>
+            <textarea class="form-control" id="anteprima" rows="10"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="data">Data</label>
+            <input type="text" class="form-control" id="data" aria-describedby="" placeholder="Inserire data">
+          </div>
+          <div class="form-group">
+            <center>
+              <button type="submit" class="btn btn-primary btn-xl" id="LoadGuidaPrev">Carica anteprima</button>
+            </center>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
   <div class="spacetoart"></div>
@@ -64,7 +108,7 @@
 
   <!-- Custom scripts for this template -->
   <script src="/js/freelancer.min.js"></script>
-  <script src="/js/dashboard.js"></script>
+  <script src="/js/guidaDash.js"></script>
 </body>
 
 </html>
