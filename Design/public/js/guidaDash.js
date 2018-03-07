@@ -1,25 +1,33 @@
 $(document).ready(function() {
   $('#LoadGuidaPrev').click(function(event){
     event.preventDefault();
-    var guidaTech= {
-        titolo:$('#titolo').val(),
-        categoria:$('#categoria').val(),
-        anteprima:$('#anteprima').val(),
-        immagine:$('#immagine').val(),
-        data:$('#data').val(),
-      }
-    $.post(
-      '/anteprimaGuida',
-      guidaTech,
-      function(response){
-        if(response.success){
-          alert('Anteprima guida '+guidaTech.titolo+' inserito correttamente');
+    var titolo = $('#titolo').val();
+    var tipo = $('#tipoGuida').val();
+    var anteprima = $('#anteprima').val();
+    var immagine = $('#immagine').val();
+    var data = $('#data').val();
+    var guidaTech={
+      titolo: titolo,
+      immagine: immagine,
+      anteprima: anteprima,
+      data:data,
+      categoria:tipo
+    }
+
+      console.log(guidaTech);
+      $.post(
+        '/anteprimaGuida',
+        guidaTech,
+        function(response){
+          if(response.success){
+            alert('Anteprima guida '+guidaTech.titolo+' inserito correttamente');
+          }
+          else{
+            alert(response.extra);
+          }
         }
-        else{
-          alert(response.extra);
-        }
-      }
-    );
+      );
+
     $('.formDashboard').each(function(index,element) {
       element.reset();
     })

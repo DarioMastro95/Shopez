@@ -156,15 +156,17 @@ router.post('/anteprimaGuida',function(req,res){
       return res.send({success:false,extra:err.toString()});
     }
     if(findedGuida){
-      return res.send({success:true,extra:'Guida già inserita'});
+      return res.send({success:true,extra:'Già presente nel db'});
     }
-    var guidaTech = new GuidaTech();
-    guidaTech.titolo = req.body.titolo;
-
-    smartphone.save();
-    return res.send({success:true,extra:'Nuovo guida tech inserita'});
+    var guidaT = new GuidaTech();
+    guidaT.titolo = req.body.titolo;
+    guidaT.anteprima = req.body.anteprima;
+    guidaT.immagine = req.body.immagine;
+    guidaT.data = req.body.data;
+    guidaT.categoria = req.body.categoria;
+    guidaT.save();
+    return res.send({success:true,extra:'Nuova preview inserita'});
   });
-
 });
 
 
