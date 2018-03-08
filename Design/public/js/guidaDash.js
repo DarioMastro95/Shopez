@@ -5,17 +5,20 @@ $(document).ready(function() {
     var tipo = $('#tipoGuida').val();
     var anteprima = $('#anteprima').val();
     var immagine = $('#immagine').val();
+    var link = '/'+tipo+'/'+titolo;
+    link.replace(" ","");
+    link = link.toLowercase();
     var data = $('#data').val();
     var guidaTech={
       titolo: titolo,
       immagine: immagine,
       anteprima: anteprima,
       data:data,
+      link:link,
       categoria:tipo
     }
-
-      console.log(guidaTech);
-      $.post(
+    console.log(guidaTech);
+    $.post(
         '/anteprimaGuida',
         guidaTech,
         function(response){
@@ -31,6 +34,7 @@ $(document).ready(function() {
     $('.formDashboard').each(function(index,element) {
       element.reset();
     })
+
   });
   $('#bold').click(function(event) {
     $('#anteprima').val($('#anteprima').val()+('<b></b>'));

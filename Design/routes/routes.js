@@ -7,8 +7,6 @@ var GuidaSalute = require('../mongoSchemi/guidaSalute');
 var GuidaFinanza = require('../mongoSchemi/guidaFinanza');
 var User = require('../mongoSchemi/User');
 
-
-
 //********************************************get pagine**********************************************
 //dashboard
 router.get('/dashboard',function(req,res){
@@ -146,6 +144,7 @@ router.post('/smartphone',function(req,res){
 //**************************************************************************************************
 
 //*****************************************Guide Tech**************************************************
+//post anteprima
 router.post('/anteprimaGuida',function(req,res){
   if(!req.session.user){
     return res.status(400).send();
@@ -158,18 +157,28 @@ router.post('/anteprimaGuida',function(req,res){
     if(findedGuida){
       return res.send({success:true,extra:'Già presente nel db'});
     }
-    var guidaT = new GuidaTech();
-    guidaT.titolo = req.body.titolo;
-    guidaT.anteprima = req.body.anteprima;
-    guidaT.immagine = req.body.immagine;
-    guidaT.data = req.body.data;
-    guidaT.categoria = req.body.categoria;
-    guidaT.save();
+    var guidaTech = new GuidaTech();
+    guidaTech.titolo = req.body.titolo;
+    guidaTech.anteprima = req.body.anteprima;
+    guidaTech.immagine = req.body.immagine;
+    guidaTech.data = req.body.data;
+    guidaTech.categoria = req.body.categoria;
+    console.log(guidaTech);
+    guidaTech.link = req.body.link;
+    guidaTech.save();
     return res.send({success:true,extra:'Nuova preview inserita'});
   });
 });
-
-
+//get anteprima
+router.get('/guide/:categoria',function(req,res){
+    var categoriaGuida = req.params.categoria;
+    GuidaTech.find({categoria:categoriaGuida},function(err,anteprimaGuidas) {
+        if(err){
+          return res.send('Nessuna anteprima '+categoriaAnt)
+        }
+        return res.send(anteprimaGuidas);
+    });
+});
 
 //****************************************Login page ***********************************************
 //login in admin dashboard

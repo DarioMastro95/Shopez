@@ -8,7 +8,8 @@ var guidaTechSchema = new mongoose.Schema({
   immagine:{type:String},
   anteprima:{type:String},
   data:{type:String},
-  categoria:{type:String}
+  categoria:{type:String},
+  link:{type:String}
 });
 
 var GuidaTech = mongoose.model('guidaTech',guidaTechSchema);
