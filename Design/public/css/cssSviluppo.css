@@ -6,12 +6,14 @@
 .bg-primary {
   background-color: #E5007D !important;
 }
-.separate{
+
+.separate {
   margin-top: 3em;
-  margin-bottom:3em;
+  margin-bottom: 3em;
   text-align: center;
 }
-.textformat{
+
+.textformat {
   height: 30px;
   width: 50px;
   margin-bottom: 1em;
@@ -53,7 +55,7 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
   background-color: #f9f9f9;
 }
 
-.dashChoseIns{
+.dashChoseIns {
   padding-top: 6em;
   border-radius: 8px;
   text-align: center;
@@ -65,7 +67,6 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
   width: auto;
   background-color: #E5007D;
 }
-
 
 .titoloContatti {
   margin-top: 3em;
@@ -594,29 +595,31 @@ a:active, a:focus, a:hover {
   top: 7rem;
 }
 
-.prevGuida{
+.prevGuida {
   margin-top: 1em;
   margin-bottom: 2em;
   height: 10em;
   width: auto;
 }
 
-.guidaPre{
+.guidaPre {
   width: auto;
 }
 
-.guida{
+.guida {
   margin-top: 2em;
   height: auto;
 }
-.CopertinaGuida{
+
+.CopertinaGuida {
   margin-top: 3em;
   margin-bottom: 6em;
   height: auto;
 }
-.imgGuida{
-}
-.testoPrev{
+
+.imgGuida {}
+
+.testoPrev {
   padding-left: 1.5em;
   padding-right: 1em;
   font-family: 'Montserrat', sans-serif;
@@ -633,11 +636,11 @@ a:active, a:focus, a:hover {
   text-align: right;
 }
 
-.vaiGuida a{
+.vaiGuida a {
   color: #E5007D;
 }
 
-.dataGuida{
+.dataGuida {
   margin-top: 2em;
   padding-left: 1.5em;
   font-family: 'Montserrat', sans-serif;
@@ -645,7 +648,7 @@ a:active, a:focus, a:hover {
   font-size: 15px;
 }
 
-.imgPrevguida{
+.imgPrevguida {
   border-radius: 10px;
   margin-top: 1em;
   margin-bottom: 2em;
@@ -665,5 +668,7 @@ a:active, a:focus, a:hover {
     font-size: 28px;
   }
 }
+
 a {
-  color: #ffffff; }
+  color: #ffffff;
+}
