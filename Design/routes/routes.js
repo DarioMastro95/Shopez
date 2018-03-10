@@ -56,6 +56,26 @@ router.get('/home', function(req, res) {
 router.get('/home/migliorismartphone', function(req, res) {
   res.sendFile(path.join(__dirname, '..', 'public', 'migliorismartphone.html'));
 });
+//get scelta tablet
+router.get('/home/miglioritablet', function(req, res) {
+  res.sendFile(path.join(__dirname, '..', 'public', 'miglioritablet.html'));
+});
+//get scelta tv
+router.get('/home/miglioritvsmart', function(req, res) {
+  res.sendFile(path.join(__dirname, '..', 'public', 'miglioritv.html'));
+});
+//get scelta pc
+router.get('/home/miglioripcportatili', function(req, res) {
+  res.sendFile(path.join(__dirname, '..', 'public', 'miglioripc.html'));
+});
+//get scelta fotocamere
+router.get('/home/migliorifotocamere', function(req, res) {
+  res.sendFile(path.join(__dirname, '..', 'public', 'migliorifotocamere.html'));
+});
+//get scelta droni
+router.get('/home/miglioridroni', function(req, res) {
+  res.sendFile(path.join(__dirname, '..', 'public', 'miglioridroni.html'));
+});
 //get contatti
 router.get('/home/contatti', function(req, res) {
   res.sendFile(path.join(__dirname, '..', 'public', 'contatti.html'));
