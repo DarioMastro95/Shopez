@@ -14,7 +14,7 @@ router.get('/dashboard', function(req, res) {
     return res.status(400).send();
   }
   res.setHeader('Content-Type', 'text/html');
-  res.sendFile(path.join(__dirname, '..', 'view', 'adminPage.html'));
+  res.sendFile(path.join(__dirname, '..', 'views', 'adminPage.html'));
 });
 //get nuovoarticolo dash
 router.get('/dashboard/nuovoarticolo', function(req, res) {
@@ -22,7 +22,7 @@ router.get('/dashboard/nuovoarticolo', function(req, res) {
     return res.status(400).send();
   }
   res.setHeader('Content-Type', 'text/html');
-  res.sendFile(path.join(__dirname, '..', 'view', 'adminArt.html'));
+  res.sendFile(path.join(__dirname, '..', 'views', 'adminArt.html'));
 });
 //get nuovaguida dash
 router.get('/dashboard/nuovaGuida', function(req, res) {
@@ -30,7 +30,7 @@ router.get('/dashboard/nuovaGuida', function(req, res) {
     return res.status(400).send();
   }
   res.setHeader('Content-Type', 'text/html');
-  res.sendFile(path.join(__dirname, '..', 'view', 'adminGuida.html'));
+  res.sendFile(path.join(__dirname, '..', 'views', 'adminGuida.html'));
 });
 //get guide tech
 router.get('/home/guideacquistotech', function(req, res) {
@@ -225,6 +225,11 @@ router.get('/guide/:categoria', function(req, res) {
     }
     return res.send(anteprimaGuidas);
   });
+});
+//get guida
+router.get('/guida', function(req, res) {
+
+  res.render('guida',{titolo:'Guida '});
 });
 
 //****************************************Login page ***********************************************

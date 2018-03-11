@@ -13,5 +13,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(session({secret:'jskdjsdksjdksjdkksdj',resave:false,saveUninitilized:true}));
 app.use('/',routes);
+app.set('view engine','ejs');
 app.listen(port,function(){
 });

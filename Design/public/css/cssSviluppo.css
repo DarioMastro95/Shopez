@@ -79,10 +79,27 @@ body {
   background-color: #f9f9f9;
 }
 
-.smartphone-bg {
+.bg-smartphone{
   background-color: #2FAC66 !important;
 }
-
+.bg-tablet{
+  background-color: #2260ba !important;
+}
+.bg-pc{
+  background-color: #8d90ce !important;
+}
+.bg-fotocamere{
+  background-color: #2cd1a6 !important;
+}
+.bg-droni{
+  background-color: #bf1b42 !important;
+}
+.bg-tv{
+  background-color: #f39200 !important;
+}
+.bg-guidetech{
+  background-color: #eadd3d !important;
+}
 .spacetoart {
   margin-top: 8em;
 }
