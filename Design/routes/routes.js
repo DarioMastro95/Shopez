@@ -229,7 +229,7 @@ router.get('/guide/:categoria', function(req, res) {
 router.get('home/guideacquistotech/:link', function(req, res) {
   var linkGuida = req.params.link;
   console.log('ciao');
-  GuidaTech.findOne({link:linkGuida},function(err,guidaTech){
+  GuidaTech.findOne({'anteprima.link':linkGuida},function(err,guidaTech){
     if(err){
       return res.send('Nessuna guida')
     }
