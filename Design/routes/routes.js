@@ -200,13 +200,12 @@ router.post('/anteprimaGuida', function(req, res) {
       });
     }
     var guidaTech = new GuidaTech();
-    guidaTech.titolo = req.body.titolo;
-    guidaTech.anteprima = req.body.anteprima;
-    guidaTech.immagine = req.body.immagine;
-    guidaTech.data = req.body.data;
-    guidaTech.categoria = req.body.categoria;
-    console.log(guidaTech);
-    guidaTech.link = req.body.link;
+    guidaTech.anteprima.titolo = req.body.titolo;
+    guidaTech.anteprima.anteprima = req.body.anteprima;
+    guidaTech.anteprima.immagine = req.body.immagine;
+    guidaTech.anteprima.data = req.body.data;
+    guidaTech.anteprima.categoria = req.body.categoria;
+    guidaTech.anteprima.link = req.body.link;
     guidaTech.save();
     return res.send({
       success: true,
@@ -218,7 +217,7 @@ router.post('/anteprimaGuida', function(req, res) {
 router.get('/guide/:categoria', function(req, res) {
   var categoriaGuida = req.params.categoria;
   GuidaTech.find({
-    categoria: categoriaGuida
+    'anteprima.categoria':categoriaGuida
   }, function(err, anteprimaGuidas) {
     if (err) {
       return res.send('Nessuna anteprima ' + categoriaAnt)
@@ -226,10 +225,19 @@ router.get('/guide/:categoria', function(req, res) {
     return res.send(anteprimaGuidas);
   });
 });
-//get guida
-router.get('/guida', function(req, res) {
+//get guidatech
+router.get('home/guideacquistotech/:link', function(req, res) {
+  var linkGuida = req.params.link;
+  console.log('ciao');
+  GuidaTech.findOne({link:linkGuida},function(err,guidaTech){
+    if(err){
+      return res.send('Nessuna guida')
+    }
+    res.render('guida',{
+      titolo:guidaTech.titolo
+    });
+  });
 
-  res.render('guida',{titolo:'Guida '});
 });
 
 //****************************************Login page ***********************************************

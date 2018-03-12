@@ -5,9 +5,8 @@ $(document).ready(function() {
     var tipo = $('#tipoGuida').val();
     var anteprima = $('#anteprima').val();
     var immagine = $('#immagine').val();
-    var link = '/' + tipo + '/' + titolo;
-    link.replace(" ", "");
-    link = link.toLowercase();
+    var link=titolo.toLowerCase();
+    link.replace(/\s/g, '');
     var data = $('#data').val();
     var guidaTech = {
       titolo: titolo,

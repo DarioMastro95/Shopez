@@ -16,12 +16,12 @@ $(document).ready(function() {
           }
           console.log(parent[0]);
           for (var i = 0; i < parent.length; i++) {
-            $('#contenuto').find('.titolo').append(anteprimaGuida.titolo);
-            $('#contenuto').find('.imgGuida').attr('src', anteprimaGuida.immagine);
-            $('#contenuto').find('.vaiGuida').attr('href', anteprimaGuida.link);
-            $('#contenuto').find('.testoPrev').append(anteprimaGuida.anteprima);
-            $('#contenuto').find('.dataGuida').append(anteprimaGuida.data);
-            console.log();
+            $('#contenuto').find('.titolo').append(anteprimaGuida.anteprima.titolo);
+            $('#contenuto').find('.imgGuida').attr('src', anteprimaGuida.anteprima.immagine);
+            $('#contenuto').find('.vaiGuida').attr('href','home/guideacquistotech/'+anteprimaGuida.anteprima.link);
+            $('#contenuto').find('.testoPrev').append(anteprimaGuida.anteprima.anteprima);
+            $('#contenuto').find('.dataGuida').append(anteprimaGuida.anteprima.data);
+
           }
         });
       } else {
