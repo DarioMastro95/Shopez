@@ -226,15 +226,14 @@ router.get('/guide/:categoria', function(req, res) {
   });
 });
 //get guidatech
-router.get('home/guideacquistotech/:link', function(req, res) {
+router.get('/home/guideacquistotech/:link', function(req, res) {
   var linkGuida = req.params.link;
-  console.log('ciao');
   GuidaTech.findOne({'anteprima.link':linkGuida},function(err,guidaTech){
     if(err){
       return res.send('Nessuna guida')
     }
     res.render('guida',{
-      titolo:guidaTech.titolo
+      titolo:guidaTech.anteprima.titolo
     });
   });
 
