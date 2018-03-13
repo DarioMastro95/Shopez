@@ -12,7 +12,10 @@
   margin-bottom: 3em;
   text-align: center;
 }
-
+.guidaDescrizioneP{
+  margin-top: 4em;
+  margin-bottom: 3em;
+}
 .textformat {
   height: 30px;
   width: 50px;
@@ -639,9 +642,10 @@ a:active, a:focus, a:hover {
 
 .testoPrev {
   padding-left: 1.5em;
-  padding-right: 1em;
+  padding-right: 1.5em;
   font-family: 'Montserrat', sans-serif;
   text-align: justify;
+  width: auto;
   font-size: 18px;
 }
 

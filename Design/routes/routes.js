@@ -24,13 +24,29 @@ router.get('/dashboard/nuovoarticolo', function(req, res) {
   res.setHeader('Content-Type', 'text/html');
   res.sendFile(path.join(__dirname, '..', 'views', 'adminArt.html'));
 });
-//get nuovaguida dash
-router.get('/dashboard/nuovaGuida', function(req, res) {
+//get scelta tra anteprima o guida
+router.get('/dashboard/nuovaguidaoanteprima', function(req, res) {
   if (!req.session.user) {
     return res.status(400).send();
   }
   res.setHeader('Content-Type', 'text/html');
-  res.sendFile(path.join(__dirname, '..', 'views', 'adminGuida.html'));
+  res.sendFile(path.join(__dirname, '..', 'views', 'adminGuidaoAnteprima.html'));
+});
+//get nuova guida
+router.get('/dashboard/nuovaguida', function(req, res) {
+  if (!req.session.user) {
+    return res.status(400).send();
+  }
+  res.setHeader('Content-Type', 'text/html');
+  res.sendFile(path.join(__dirname, '..', 'views', 'adminNuovaGuida.html'));
+});
+//get nuovaanteprimaguida dash
+router.get('/dashboard/nuovaanteprimaguida', function(req, res) {
+  if (!req.session.user) {
+    return res.status(400).send();
+  }
+  res.setHeader('Content-Type', 'text/html');
+  res.sendFile(path.join(__dirname, '..', 'views', 'adminAnteprimaGuida.html'));
 });
 //get guide tech
 router.get('/home/guideacquistotech', function(req, res) {
@@ -233,7 +249,8 @@ router.get('/home/guideacquistotech/:link', function(req, res) {
       return res.send('Nessuna guida')
     }
     res.render('guida',{
-      titolo:guidaTech.anteprima.titolo
+      titolo:guidaTech.anteprima.titolo,
+      introduzione:guidaTech.anteprima.anteprima
     });
   });
 
