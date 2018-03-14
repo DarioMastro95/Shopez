@@ -15,7 +15,7 @@ var guidaTechSchema = new mongoose.Schema({
   //guida
   guida:{
     titolo:{type:String},
-    descrizione:{type:String},
+    introduzione:{type:String},
     prodotti:[{
       nome:String,
       immagine:String,

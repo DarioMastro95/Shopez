@@ -1,148 +1,123 @@
 /*common styles !!!YOU DON'T NEED THEM */
 .effect {
   width: 100%;
-  padding: 50px 0px 70px 0px; }
-  .effect .buttons {
-    margin-top: 50px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    height: 64px; }
-  .effect a:last-child {
-    margin-right: 0px; }
-
+  padding: 50px 0px 70px 0px;
+}
+.effect .buttons {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  height: 64px;
+}
+.effect a:last-child {
+  margin-right: 0px;
+}
 /*common link styles !!!YOU NEED THEM*/
 .effect {
-  /*display: flex; !!!uncomment this line !!!*/ }
-  .effect a {
-    text-decoration: none !important;
-    color: #fff;
-    width: 60px;
-    height: 60px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    border-radius: 10px;
-    margin-right: 20px;
-    font-size: 25px;
-    overflow: hidden;
-    position: relative; }
-    .effect a i {
-      position: relative;
-      z-index: 3; }
-    .effect a.fb {
-      background-color: #3b5998; }
-    .effect a.tw {
-      background-color: #00aced; }
-    .effect a.g-plus {
-      background-color: #dd4b39; }
-    .effect a.dribbble {
-      background-color: #ea4c89; }
-    .effect a.pinterest {
-      background-color: #cb2027; }
-    .effect a.insta {
-      background-color: #bc2a8d; }
-    .effect a.in {
-      background-color: #007bb6; }
-    .effect a.vimeo {
-      background-color: #1ab7ea; }
-
+  /*display: flex; !!!uncomment this line !!!*/
+}
+.effect a {
+  text-decoration: none !important;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-right: 20px;
+  font-size: 25px;
+  overflow: hidden;
+  position: relative;
+}
+.effect a i {
+  position: relative;
+  z-index: 3;
+}
+.effect a.fb {
+  background-color: #3b5998;
+}
+.effect a.tw {
+  background-color: #00aced;
+}
+.effect a.g-plus {
+  background-color: #dd4b39;
+}
+.effect a.dribbble {
+  background-color: #ea4c89;
+}
+.effect a.pinterest {
+  background-color: #cb2027;
+}
+.effect a.insta {
+  background-color: #bc2a8d;
+}
+.effect a.in {
+  background-color: #007bb6;
+}
+.effect a.vimeo {
+  background-color: #1ab7ea;
+}
 /* aeneas effect */
 .effect.aeneas a {
-  -webkit-transition: border-top-left-radius 0.1s linear 0s, border-top-right-radius 0.1s linear 0.1s, border-bottom-right-radius 0.1s linear 0.2s, border-bottom-left-radius 0.1s linear 0.3s, -webkit-transform 0.4s linear 0s;
-  transition: border-top-left-radius 0.1s linear 0s, border-top-right-radius 0.1s linear 0.1s, border-bottom-right-radius 0.1s linear 0.2s, border-bottom-left-radius 0.1s linear 0.3s, -webkit-transform 0.4s linear 0s;
-  -o-transition: transform 0.4s linear 0s, border-top-left-radius 0.1s linear 0s, border-top-right-radius 0.1s linear 0.1s, border-bottom-right-radius 0.1s linear 0.2s, border-bottom-left-radius 0.1s linear 0.3s;
   transition: transform 0.4s linear 0s, border-top-left-radius 0.1s linear 0s, border-top-right-radius 0.1s linear 0.1s, border-bottom-right-radius 0.1s linear 0.2s, border-bottom-left-radius 0.1s linear 0.3s;
-  transition: transform 0.4s linear 0s, border-top-left-radius 0.1s linear 0s, border-top-right-radius 0.1s linear 0.1s, border-bottom-right-radius 0.1s linear 0.2s, border-bottom-left-radius 0.1s linear 0.3s, -webkit-transform 0.4s linear 0s; }
-  .effect.aeneas a i {
-    -webkit-transition: -webkit-transform 0.4s linear 0s;
-    transition: -webkit-transform 0.4s linear 0s;
-    -o-transition: transform 0.4s linear 0s;
-    transition: transform 0.4s linear 0s;
-    transition: transform 0.4s linear 0s, -webkit-transform 0.4s linear 0s; }
-  .effect.aeneas a:hover {
-    -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
-    border-radius: 50%; }
-    .effect.aeneas a:hover i {
-      -webkit-transform: rotate(-360deg);
-      -ms-transform: rotate(-360deg);
-      transform: rotate(-360deg); }
-
+}
+.effect.aeneas a i {
+  transition: transform 0.4s linear 0s;
+}
+.effect.aeneas a:hover {
+  transform: rotate(360deg);
+  border-radius: 50%;
+}
+.effect.aeneas a:hover i {
+  transform: rotate(-360deg);
+}
 /* jaques effect */
 .effect.jaques a {
-  -webkit-transition: border-top-left-radius 0.1s linear 0s, border-top-right-radius 0.1s linear 0.1s, border-bottom-right-radius 0.1s linear 0.2s, border-bottom-left-radius 0.1s linear 0.3s;
-  -o-transition: border-top-left-radius 0.1s linear 0s, border-top-right-radius 0.1s linear 0.1s, border-bottom-right-radius 0.1s linear 0.2s, border-bottom-left-radius 0.1s linear 0.3s;
-  transition: border-top-left-radius 0.1s linear 0s, border-top-right-radius 0.1s linear 0.1s, border-bottom-right-radius 0.1s linear 0.2s, border-bottom-left-radius 0.1s linear 0.3s; }
-  .effect.jaques a:hover {
-    border-radius: 50%; }
-
+  transition: border-top-left-radius 0.1s linear 0s, border-top-right-radius 0.1s linear 0.1s, border-bottom-right-radius 0.1s linear 0.2s, border-bottom-left-radius 0.1s linear 0.3s;
+}
+.effect.jaques a:hover {
+  border-radius: 50%;
+}
 /* egeon effect */
 .effect.egeon a {
-  -webkit-transition: border-radius 0.2s linear 0.2s, -webkit-transform 0.2s linear 0s;
-  transition: border-radius 0.2s linear 0.2s, -webkit-transform 0.2s linear 0s;
-  -o-transition: transform 0.2s linear 0s, border-radius 0.2s linear 0.2s;
   transition: transform 0.2s linear 0s, border-radius 0.2s linear 0.2s;
-  transition: transform 0.2s linear 0s, border-radius 0.2s linear 0.2s, -webkit-transform 0.2s linear 0s; }
-  .effect.egeon a i {
-    -webkit-transition: -webkit-transform 0.2s linear 0s;
-    transition: -webkit-transform 0.2s linear 0s;
-    -o-transition: transform 0.2s linear 0s;
-    transition: transform 0.2s linear 0s;
-    transition: transform 0.2s linear 0s, -webkit-transform 0.2s linear 0s; }
-  .effect.egeon a:hover {
-    -webkit-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%; }
-    .effect.egeon a:hover i {
-      -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-      transform: rotate(90deg); }
-
+}
+.effect.egeon a i {
+  transition: transform 0.05s linear 0s;
+}
+.effect.egeon a:hover {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.effect.egeon a:hover i {
+  transform: rotate(90deg);
+}
 /* claudio effect */
 .effect.claudio a {
-  -webkit-transition: border-radius 0.2s linear 0s, -webkit-transform 0.2s linear 0s;
-  transition: border-radius 0.2s linear 0s, -webkit-transform 0.2s linear 0s;
-  -o-transition: transform 0.2s linear 0s, border-radius 0.2s linear 0s;
   transition: transform 0.2s linear 0s, border-radius 0.2s linear 0s;
-  transition: transform 0.2s linear 0s, border-radius 0.2s linear 0s, -webkit-transform 0.2s linear 0s; }
-  .effect.claudio a:hover {
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
-    border-bottom-left-radius: 50%;
-    border-top-right-radius: 50%; }
-
+}
+.effect.claudio a:hover {
+  transform: scale(1.2);
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
 /* laertes effect */
 .effect.laertes a {
-  -webkit-transition: all 0.2s linear 0s;
-  -o-transition: all 0.2s linear 0s;
-  transition: all 0.2s linear 0s; }
-  .effect.laertes a i {
-    -webkit-transition: all 0.2s linear 0s;
-    -o-transition: all 0.2s linear 0s;
-    transition: all 0.2s linear 0s; }
-  .effect.laertes a:hover {
-    border-radius: 50%/20%; }
-    .effect.laertes a:hover i {
-      -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      transform: scale(1.1);
-      text-shadow: 0 0 12px rgba(33, 33, 33, 0.6); }
-
+  transition: all 0.2s linear 0s;
+}
+.effect.laertes a i {
+  transition: all 0.2s linear 0s;
+}
+.effect.laertes a:hover {
+  border-radius: 50%/20%;
+}
+.effect.laertes a:hover i {
+  transform: scale(1.1);
+  text-shadow: 0 0 12px rgba(33, 33, 33, 0.6);
+}
 /* Reset */
 /* Main Styles */
 .button {
@@ -161,68 +136,75 @@
   cursor: pointer;
   overflow: hidden;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
-  -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
-  -o-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
-  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4); }
-  .button span,
-  .button .icon {
-    display: block;
-    height: 100%;
-    text-align: center;
-    position: absolute;
-    top: 0; }
-  .button span {
-    width: 72%;
-    line-height: inherit;
-    font-size: 22px;
-    text-transform: uppercase;
-    left: 0;
-    -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
-    -o-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
-    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4); }
-    .button span:after {
-      content: '';
-      background-color: black;
-      width: 2px;
-      height: 70%;
-      position: absolute;
-      top: 15%;
-      right: -1px; }
-  .button .icon {
-    width: 28%;
-    right: 0;
-    -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
-    -o-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
-    transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4); }
-    .button .icon .fa {
-      font-size: 30px;
-      vertical-align: middle;
-      -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
-      -o-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
-      transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease; }
-    .button .icon .fa-remove {
-      height: 36px; }
-    .button .icon .fa-check {
-      display: none; }
-  .button.success span, .button:hover span {
-    left: -72%;
-    opacity: 0; }
-  .button.success .icon, .button:hover .icon {
-    content: '';
-    width: 100%; }
-    .button.success .icon .fa, .button:hover .icon .fa {
-      font-size: 45px; }
-  .button.success {
-    background-color: #27ae60; }
-    .button.success .icon .fa-remove {
-      display: none; }
-    .button.success .icon .fa-check {
-      display: inline-block; }
-  .button:hover {
-    opacity: .9; }
-    .button:hover .icon .fa-remove {
-      height: 46px; }
-  .button:active {
-    opacity: 1; }
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, .3);
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+.button span, .button .icon {
+  display: block;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+}
+.button span {
+  width: 72%;
+  line-height: inherit;
+  font-size: 22px;
+  text-transform: uppercase;
+  left: 0;
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+.button span:after {
+  content: '';
+  background-color: black;
+  width: 2px;
+  height: 70%;
+  position: absolute;
+  top: 15%;
+  right: -1px;
+}
+.button .icon {
+  width: 28%;
+  right: 0;
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+.button .icon .fa {
+  font-size: 30px;
+  vertical-align: middle;
+  transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
+}
+.button .icon .fa-remove {
+  height: 36px;
+}
+.button .icon .fa-check {
+  display: none;
+}
+.button.success span, .button:hover span {
+  left: -72%;
+  opacity: 0;
+}
+.button.success .icon, .button:hover .icon {
+  content: '';
+  width: 100%;
+}
+.button.success .icon .fa, .button:hover .icon .fa {
+  font-size: 45px;
+}
+.button.success {
+  background-color: #27ae60;
+}
+.button.success .icon .fa-remove {
+  display: none;
+}
+.button.success .icon .fa-check {
+  display: inline-block;
+}
+.button:hover {
+  opacity: 0.9;
+}
+.button:hover .icon .fa-remove {
+  height: 46px;
+}
+.button:active {
+  opacity: 1;
+}

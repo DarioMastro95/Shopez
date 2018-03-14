@@ -136,14 +136,15 @@ $font-size: 25px;
     transition: transform 0.2s linear 0s, border-radius 0.2s linear 0.2s;
 
     i {
-      transition: transform 0.2s linear 0s;
+      transition: transform 0.05s linear 0s;
     }
 
     &:hover {
-      transform: rotate(-90deg);
+      //transform: rotate(-360deg);
       border-top-left-radius: 50%;
       border-top-right-radius: 50%;
       border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
 
       i {
         transform: rotate(90deg);
