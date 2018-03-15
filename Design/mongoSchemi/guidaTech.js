@@ -17,10 +17,11 @@ var guidaTechSchema = new mongoose.Schema({
     titolo:{type:String},
     introduzione:{type:String},
     prodotti:[{
-      nome:String,
-      immagine:String,
-      recensione:String,
-      linkAmazon:String
+      posizione:{type:Number},
+      nome:{type:String},
+      immagine:{type:String},
+      recensione:{type:String},
+      linkAmazon:{type:String}
     }]
   }
 });
