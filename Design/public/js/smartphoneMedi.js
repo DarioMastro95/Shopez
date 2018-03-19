@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $.get(
-    '/smartphone/Fasciabassa',
+    '/smartphone/Fasciamedia',
     function(response){
       if(response){
         response.forEach(function(smartphone,index) {

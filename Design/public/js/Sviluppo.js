@@ -91,12 +91,3 @@ $(document).ready(function() {
 
 });
 
-var cls = document.getElementsByClassName('caratteristica');
-Array.from(cls).forEach(function(v) {
-  v.addEventListener("mouseenter", function() {
-    this.style.background = "#e6e6e6";
-  });
-  v.addEventListener("mouseleave", function() {
-    this.style.background = "inherit";
-  });
-});

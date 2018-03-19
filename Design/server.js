@@ -8,11 +8,11 @@ var session = require('express-session');
 var Smartphone = require('./mongoSchemi/Smartphone');
 var User = require('./mongoSchemi/User');
 
-app.use(express.static(__dirname+'/public'));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
-app.use(session({secret:'jskdjsdksjdksjdkksdj',resave:false,saveUninitilized:true}));
-app.use('/',routes);
-app.set('view engine','ejs');
-app.listen(port,function(){
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(session({ secret: 'jskdjsdksjdksjdkksdj', resave: false, saveUninitilized: true }));
+app.use('/', routes);
+app.set('view engine', 'ejs');
+app.listen(port, function () {
 });

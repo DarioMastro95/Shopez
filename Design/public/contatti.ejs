@@ -23,13 +23,11 @@
       <div class="container"></div>
     </header>
     <div class="container">
-      <div class="titoloContatti">
-        <h1>Contattaci</h1>
+      <div class="titolopag">
+        <h1>Contatti</h1>
       </div>
       <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-          <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+        <div class="col-lg-7 mx-auto">
           <form name="sentMessage" id="contactForm" novalidate="novalidate">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -45,6 +43,7 @@
                 <p class="help-block text-danger"></p>
               </div>
             </div>
+
             <div class="control-group">
               <div class="form-group floating-label-form-group controls mb-0 pb-2">
                 <label>Telefono</label>
@@ -59,15 +58,13 @@
                 <p class="help-block text-danger"></p>
               </div>
             </div>
-            <br>
             <div id="success"></div>
             <div class="form-group">
             <center>
               <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">INVIA</button>
             </center>
             </div>
-          </form>
-        </div>
+          </div>
       </div>
     </div>
     <% include ../views/footer %>

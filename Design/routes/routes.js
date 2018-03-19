@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var router = express.Router();
 var Smartphone = require('../mongoSchemi/Smartphone');
+var Tablet = require('../mongoSchemi/Tablet');
 var GuidaTech = require('../mongoSchemi/guidaTech');
 var GuidaSalute = require('../mongoSchemi/guidaSalute');
 var GuidaFinanza = require('../mongoSchemi/guidaFinanza');
@@ -72,6 +73,22 @@ router.get('/home', function(req, res) {
 router.get('/home/migliorismartphone', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'migliorismartphone'));
 });
+//get tablet top
+router.get('/home/miglioritablet/tablettop', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'tabletTop'));
+});
+//get tablet medi
+router.get('/home/miglioritablet/tabletmedi', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'tabletMedi'));
+});
+//get tablet bassi
+router.get('/home/miglioritablet/tabletbassi', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'tabletBassi'));
+});
+//get drone top
+router.get('/home/miglioridroni/dronitop', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'droniTop'));
+});
 //get scelta tablet
 router.get('/home/miglioritablet', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'miglioritablet'));
@@ -80,6 +97,17 @@ router.get('/home/miglioritablet', function(req, res) {
 router.get('/home/miglioritvsmart', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'miglioritv'));
 });
+
+//get droni medi
+router.get('/home/miglioridroni/dronimedi', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'droniMedi'));
+});
+
+//get droni bassi
+router.get('/home/miglioridroni/dronibassi', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'droniBassi'));
+});
+
 //get scelta pc
 router.get('/home/miglioripcportatili', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'miglioripc'));
@@ -187,6 +215,97 @@ router.post('/smartphone', function(req, res) {
     return res.send({
       success: true,
       extra: 'Nuovo smartphone inserito'
+    });
+  });
+
+});
+//get tablet in base alla fascia
+router.get('/tablet/:fascia', function(req, res) {
+  var fasciaTablet = req.params.fascia;
+  var fascia;
+  switch (fasciaTablet) {
+    case 'Fasciaalta':
+      fascia = 'Fascia alta';
+      break;
+    case 'Fasciamedia':
+      fascia = 'Fascia media';
+      break;
+    case 'Fasciabassa':
+      fascia = 'Fascia bassa';
+      break;
+    default:
+
+  }
+  Tablet.find({
+    fascia: fascia
+  }, function(err, tablets) {
+    if (err) {
+      return res.send('Nessun Tablet')
+    }
+    return res.send(tablets);
+  });
+});
+// post tablet in db
+router.post('/tablet', function(req, res) {
+  if (!req.session.user) {
+    return res.status(400).send();
+  }
+  var fascia = req.body.fascia;
+  var position = req.body.position;
+  Tablet.findOne({
+    fascia: fascia,
+    position: position
+  }, function(err, findedTablet) {
+    if (err) {
+      return res.send({
+        success: false,
+        extra: err.toString()
+      });
+    }
+    if (findedTablet) {
+      findedTablet.titolo = req.body.titolo;
+      findedTablet.recensione = req.body.recensione;
+      findedTablet.immagine = req.body.immagine;
+      findedTablet.link = req.body.link;
+      findedTablet.batteria = req.body.batteria;
+      findedTablet.fotocamera = req.body.fotocamera;
+      findedTablet.display = req.body.display;
+      findedTablet.memoria = req.body.memoria;
+      findedTablet.processore = req.body.processore;
+      findedTablet.ram = req.body.ram;
+      findedTablet.rete = req.body.rete;
+      findedTablet.so = req.body.so;
+      findedTablet.pro = req.body.pro;
+      findedTablet.contro = req.body.contro;
+      findedTablet.position = req.body.position;
+      findedTablet.fascia = req.body.fascia;
+      findedTablet.save();
+      return res.send({
+        success: true,
+        extra: 'Tablet sovrascritto'
+      });
+    }
+    var tablet = new Tablet();
+    tablet.titolo = req.body.titolo;
+    tablet.recensione = req.body.recensione;
+    tablet.immagine = req.body.immagine;
+    tablet.link = req.body.link;
+    tablet.batteria = req.body.batteria;
+    tablet.fotocamera = req.body.fotocamera;
+    tablet.display = req.body.display;
+    tablet.memoria = req.body.memoria;
+    tablet.processore = req.body.processore;
+    tablet.ram = req.body.ram;
+    tablet.rete = req.body.rete;
+    tablet.so = req.body.so;
+    tablet.pro = req.body.pro;
+    tablet.contro = req.body.contro;
+    tablet.position = req.body.position;
+    tablet.fascia = req.body.fascia;
+    tablet.save();
+    return res.send({
+      success: true,
+      extra: 'Nuovo tablet inserito'
     });
   });
 
