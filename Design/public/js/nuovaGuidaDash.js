@@ -2,20 +2,14 @@ var counter = 0;
 
 $(document).ready(function () {
   var titolo = '';
-  var introsuzione = '';
-  var prodotto =[{
-    posizione: 0,
-    nome: '',
-    immagine: '',
-    recensione: '',
-    linkAmazon: ''
-  }];
+  var introduzione = '';
+  var prodotti =[];
   $('#LoadGuida').click(function (event) {
     event.preventDefault();
     for (var i = 0; i < counter; i++) {
-      
+      prodotti.push({posizione:i,immagine:$('#immagineP'+i).val()})
     }
-    console.log(prodotto);
+    console.log(prodotti);
   });
 
   $('#AggiungiProdotto').click(function (event) {
