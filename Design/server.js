@@ -15,4 +15,5 @@ app.use(session({ secret: 'jskdjsdksjdksjdkksdj', resave: false, saveUninitilize
 app.use('/', routes);
 app.set('view engine', 'ejs');
 app.listen(port, function () {
+  console.log(port);
 });

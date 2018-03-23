@@ -707,6 +707,12 @@ a:active, a:focus, a:hover {
   h1 {
     font-size: 28px;
   }
+  .caratpic {
+    height: 50px;
+    width: 100%;
+    margin-bottom: 1.5em;
+    margin-left: 0em;
+  }
 }
 
 a {

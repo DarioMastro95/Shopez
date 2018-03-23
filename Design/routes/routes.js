@@ -57,6 +57,10 @@ router.get('/home/guideacquistotech', function(req, res) {
 router.get('/home/migliorismartphone/smartphonetop', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'smartphoneTop'));
 });
+//get home
+router.get('/', function(req, res) {
+  res.redirect('/home');
+});
 //get smartphoneMedi
 router.get('/home/migliorismartphone/smartphonemedi', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'smartphoneMedi'));
@@ -346,6 +350,19 @@ router.post('/anteprimaGuida', function(req, res) {
       success: true,
       extra: 'Nuova preview inserita'
     });
+  });
+});
+
+//get titolo anteprimaTech
+router.get('/guideTech/:titolo', function(req, res) {
+  var titolo = req.params.titolo;
+  GuidaTech.findOne({
+    'anteprima.titolo':titolo
+  }, function(err, titoloGuida) {
+    if (err) {
+      return res.send('Nessuna guida ' + titoloGuida)
+    }
+    return res.send(titoloGuida);
   });
 });
 //get anteprima
