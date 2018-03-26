@@ -20,8 +20,8 @@ var guidaTechSchema = new mongoose.Schema({
       posizione:{type:Number},
       nome:{type:String},
       immagine:{type:String},
-      recensione:{type:String},
-      linkAmazon:{type:String}
+      descrizione:{type:String},
+      link:{type:String}
     }]
   }
 });

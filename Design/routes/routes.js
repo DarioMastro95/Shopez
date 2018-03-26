@@ -358,7 +358,6 @@ router.post('/guidaTech', function(req, res) {
     return res.status(400).send();
   }
   var titolo = req.body.titolo;
-    console.log(req.body.prodotti);
   GuidaTech.findOne({
     'anteprima.titolo': titolo
   }, function(err, findedGuida) {
