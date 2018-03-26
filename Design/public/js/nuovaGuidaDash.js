@@ -1,5 +1,5 @@
 var counter = 0;
-
+var prodotti =[];
 function validateTitle(campo) {
   return new Promise(function (resolve, reject){
     if(campo==''){
@@ -29,20 +29,36 @@ function validateTitle(campo) {
 $(document).ready(function () {
   var titolo = '';
   var introduzione = '';
-  var prodotti =[];
+  var guidaTech;
   $('#LoadGuida').click(function (event) {
     event.preventDefault();
     titolo = $('#titolo').val();
     introduzione = $('#introduzione').val();
     validateTitle(titolo).then(function(result,err) {
-      console.log(result);
       if (result) {
         for (var i = 0; i < counter; i++) {
           prodotti.push({posizione:i,nome:$('#nomeP'+i).val(),link:$('#linkP'+i).val(),descrizione:$('#descrizioneP'+i).val(),immagine:$('#immagineP'+i).val()})
         }
-        console.log(titolo);
-        console.log(prodotti);
+        guidaTech={
+          titolo:titolo,
+          introduzione:introduzione,
+          prodotti:prodotti
+        }
       }
+    });
+    $.ajax({
+      type: "POST",
+      url: '/guidaTech',
+      dataType:'json',
+      data: JSON.parse(JSON.stringify({guidaTech})),
+      success: function(response){
+          if(response.success){
+            alert('GuidaTech '+titolo+' inserito correttamente');
+          }
+          else{
+            alert(response.extra);
+          }
+        }
     });
   });
 

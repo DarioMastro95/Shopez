@@ -352,6 +352,34 @@ router.post('/anteprimaGuida', function(req, res) {
     });
   });
 });
+//post guidaTech
+router.post('/guidaTech', function(req, res) {
+  if (!req.session.user) {
+    return res.status(400).send();
+  }
+  var titolo = req.body.titolo;
+    console.log(req.body.prodotti);
+  GuidaTech.findOne({
+    'anteprima.titolo': titolo
+  }, function(err, findedGuida) {
+    if (err) {
+      return res.send({
+        success: false,
+        extra: err.toString()
+      });
+    }
+    if (findedGuida) {
+      findedGuida.guida.titolo = req.body.titolo;
+      findedGuida.guida.introduzione = req.body.introduzione;
+      findedGuida.guida.prodotti = req.body.prodotti;
+      findedGuida.save();
+      return res.send({
+        success: true,
+        extra: 'Nuova guida inserita'
+      });
+    }
+  });
+});
 
 //get titolo anteprimaTech
 router.get('/guideTech/:titolo', function(req, res) {
@@ -408,6 +436,5 @@ router.post('/login', function(req, res) {
     req.session.user = user;
     res.redirect('/dashboard');
   });
-
 });
 module.exports = router;
