@@ -73,46 +73,10 @@
             <input type="text" class="form-control" id="link" aria-describedby="" placeholder="link amazon">
           </div>
         </form>
-        <div class="col-lg-6">
-          <form class="formDashboard admindivdashl fontForm">
-            <div class="form-group">
-              <label for="batteria">Batteria</label>
-              <input type="text" class="form-control" id="batteria" aria-describedby="" placeholder="caratteristiche batteria">
-            </div>
-            <div class="form-group">
-              <label for="display">Display</label>
-              <input type="text" class="form-control" id="display" aria-describedby="" placeholder="caratteristiche display">
-            </div>
-            <div class="form-group">
-              <label for="memoria">Memoria</label>
-              <input type="text" class="form-control" id="memoria" aria-describedby="" placeholder="caratteristiche memoria">
-            </div>
-            <div class="form-group">
-              <label for="processore">Processore</label>
-              <input type="text" class="form-control" id="processore" aria-describedby="" placeholder="caratteristiche processore">
-            </div>
-          </form>
-        </div>
-        <div class="col-lg-6">
-          <form class="formDashboard admindivdashr fontForm">
-            <div class="form-group">
-              <label for="fotocamera">Fotocamera</label>
-              <input type="text" class="form-control" id="fotocamera" aria-describedby="" placeholder="caratteristiche fotocamera">
-            </div>
-            <div class="form-group">
-              <label for="ram">Ram</label>
-              <input type="text" class="form-control" id="ram" aria-describedby="" placeholder="caratteristiche Ram">
-            </div>
-            <div class="form-group">
-              <label for="rete">Rete</label>
-              <input type="text" class="form-control" id="rete" aria-describedby="" placeholder="caratteristiche rete">
-            </div>
-            <div class="form-group">
-              <label for="so">Sistema operativo</label>
-              <input type="text" class="form-control" id="so" aria-describedby="" placeholder="caratteristiche sistema operativo">
-            </div>
-          </form>
-        </div>
+        <div id="smartphoneCar" class="viewCar"><% include ../views/carSmart %></div>
+        <div id="tabletCar" class="viewCar"><% include ../views/carTablet %></div>
+        <div id="droneCar" class="viewCar"><% include ../views/carDrone %></div>
+
         <form class="formDashboard fontForm">
           <div class="form-group">
             <label for="pro">Pro</label>

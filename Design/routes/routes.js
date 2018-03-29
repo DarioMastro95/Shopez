@@ -22,8 +22,7 @@ router.get('/dashboard/nuovoarticolo', function(req, res) {
   if (!req.session.user) {
     return res.status(400).send();
   }
-  res.setHeader('Content-Type', 'text/html');
-  res.sendFile(path.join(__dirname, '..', 'views', 'adminArt.html'));
+  res.render(path.join(__dirname, '..', 'views', 'adminArt'));
 });
 //get scelta tra anteprima o guida
 router.get('/dashboard/nuovaguidaoanteprima', function(req, res) {
@@ -110,6 +109,12 @@ router.get('/home/miglioridroni/dronimedi', function(req, res) {
 //get droni bassi
 router.get('/home/miglioridroni/dronibassi', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'droniBassi'));
+});
+
+//get Login
+
+router.get('/login', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'login'));
 });
 
 //get scelta pc
@@ -254,8 +259,11 @@ router.post('/tablet', function(req, res) {
   if (!req.session.user) {
     return res.status(400).send();
   }
+
   var fascia = req.body.fascia;
   var position = req.body.position;
+    console.log(fascia);
+      console.log(position);
   Tablet.findOne({
     fascia: fascia,
     position: position

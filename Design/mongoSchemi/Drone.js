@@ -12,7 +12,6 @@ var droneSchema = new mongoose.Schema({
   dimensione:{type:String},
   distanza:{type:String},
   autonomia:{type:String},
-  processore:{type:String},
   controller:{type:String},
   risoluzione:{type:String},
   pro:[String],

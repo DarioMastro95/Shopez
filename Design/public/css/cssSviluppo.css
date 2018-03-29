@@ -14,6 +14,10 @@
   text-align: center;
 }
 
+.viewCar{
+  width: 100%;
+}
+
 .guidaDescrizioneP {
   margin-top: 4em;
   margin-bottom: 3em;
@@ -128,6 +132,7 @@ body {
 header.masthead {
   padding-top: calc(2rem + 100px);
   padding-bottom: 3rem;
+  height: 150px;
 }
 
 .categoria {
@@ -342,14 +347,22 @@ ul.controUl {
   }
 }
 
+a.backLabal{
+  line-height: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: -1em;
+}
+
 @media (max-width: 768px) {
   .categoria {
     margin-bottom: -30px;
     margin-top: 50px;
   }
   .categoria {
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
     margin-bottom: 30px;
   }
   .portfolio {
@@ -713,7 +726,9 @@ a:active, a:focus, a:hover {
     margin-bottom: 1.5em;
     margin-left: 0em;
   }
+
 }
+
 
 a {
   color: #ffffff;
