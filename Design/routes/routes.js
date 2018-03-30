@@ -89,6 +89,18 @@ router.get('/home/miglioritablet/tabletmedi', function(req, res) {
 router.get('/home/miglioritablet/tabletbassi', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'tabletBassi'));
 });
+//get tv top
+router.get('/home/miglioritablet/tvTop', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'tvTop'));
+});
+//get tv medi
+router.get('/home/miglioritablet/tvMedie', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'tvMedie'));
+});
+//get tv bassi
+router.get('/home/miglioritablet/tvBasse', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'tvBasse'));
+});
 //get drone top
 router.get('/home/miglioridroni/dronitop', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'droniTop'));
@@ -522,11 +534,13 @@ router.get('/home/guideacquistotech/:link', function(req, res) {
     }
     res.render('guida',{
       titolo:guidaTech.anteprima.titolo,
-      introduzione:guidaTech.anteprima.anteprima
+      introduzione:guidaTech.guida.introduzione,
+      data:guidaTech.anteprima.data,
+      prodotti:guidaTech.guida.prodotti
     });
   });
-
 });
+
 
 //****************************************Login page ***********************************************
 //login in admin dashboard

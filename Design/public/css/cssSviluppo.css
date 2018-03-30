@@ -17,7 +17,13 @@
 .viewCar{
   width: 100%;
 }
-
+.introduzioneGuida{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  text-align: justify;
+  height: auto;
+  font-family: 'Montserrat', sans-serif;
+}
 .guidaDescrizioneP {
   margin-top: 4em;
   margin-bottom: 3em;
@@ -175,7 +181,13 @@ header.masthead {
     margin-bottom: 20px;
   }
 }
-
+.titolofascia{
+  margin-top: -1em;
+  font-weight: 700;
+  font-family: 'Montserrat';
+  font-size: 30px;
+  text-align: center;
+}
 .recensione::-webkit-scrollbar {
   width: 0 !important;
   overflow-y: scroll;
