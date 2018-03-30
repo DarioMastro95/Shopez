@@ -3,6 +3,7 @@ var path = require('path');
 var router = express.Router();
 var Smartphone = require('../mongoSchemi/Smartphone');
 var Tablet = require('../mongoSchemi/Tablet');
+var Drone = require('../mongoSchemi/Drone');
 var GuidaTech = require('../mongoSchemi/guidaTech');
 var GuidaSalute = require('../mongoSchemi/guidaSalute');
 var GuidaFinanza = require('../mongoSchemi/guidaFinanza');
@@ -228,6 +229,9 @@ router.post('/smartphone', function(req, res) {
   });
 
 });
+//***********************************************************************************************
+
+//*****************************************Tablet********************************************
 //get tablet in base alla fascia
 router.get('/tablet/:fascia', function(req, res) {
   var fasciaTablet = req.params.fascia;
@@ -322,6 +326,103 @@ router.post('/tablet', function(req, res) {
   });
 
 });
+//***********************************************************************************************
+
+//*****************************************Droni********************************************
+
+//get drone in base alla fascia
+router.get('/droni/:fascia', function(req, res) {
+  var fasciaDroni = req.params.fascia;
+  var fascia;
+  switch (fasciaDroni) {
+    case 'Fasciaalta':
+      fascia = 'Fascia alta';
+      break;
+    case 'Fasciamedia':
+      fascia = 'Fascia media';
+      break;
+    case 'Fasciabassa':
+      fascia = 'Fascia bassa';
+      break;
+    default:
+
+  }
+  Drone.find({
+    fascia: fascia
+  }, function(err, drones) {
+    if (err) {
+      return res.send('Nessun Drone')
+    }
+    return res.send(drones);
+  });
+});
+// post drone in db
+router.post('/drone', function(req, res) {
+  if (!req.session.user) {
+    return res.status(400).send();
+  }
+
+  var fascia = req.body.fascia;
+  var position = req.body.position;
+    console.log(fascia);
+      console.log(position);
+  Drone.findOne({
+    fascia: fascia,
+    position: position
+  }, function(err, findedDrone) {
+    if (err) {
+      return res.send({
+        success: false,
+        extra: err.toString()
+      });
+    }
+    if (findedDrone) {
+      findedDrone.titolo = req.body.titolo;
+      findedDrone.recensione = req.body.recensione;
+      findedDrone.immagine = req.body.immagine;
+      findedDrone.link = req.body.link;
+      findedDrone.batteria = req.body.batteria;
+      findedDrone.autonomia = req.body.autonomia;
+      findedDrone.distanza = req.body.distanza;
+      findedDrone.controller = req.body.controller;
+      findedDrone.dimensione = req.body.dimensione;
+      findedDrone.risoluzione = req.body.risoluzione;
+      findedDrone.so = req.body.so;
+      findedDrone.pro = req.body.pro;
+      findedDrone.contro = req.body.contro;
+      findedDrone.position = req.body.position;
+      findedDrone.fascia = req.body.fascia;
+      findedDrone.save();
+      return res.send({
+        success: true,
+        extra: 'Drone sovrascritto'
+      });
+    }
+    var drone = new Drone();
+    drone.titolo = req.body.titolo;
+    drone.recensione = req.body.recensione;
+    drone.immagine = req.body.immagine;
+    drone.link = req.body.link;
+    drone.batteria = req.body.batteria;
+    drone.autonomia = req.body.autonomia;
+    drone.distanza = req.body.distanza;
+    drone.controller = req.body.controller;
+    drone.dimensione = req.body.dimensione;
+    drone.risoluzione = req.body.risoluzione;
+    drone.so = req.body.so;
+    drone.pro = req.body.pro;
+    drone.contro = req.body.contro;
+    drone.position = req.body.position;
+    drone.fascia = req.body.fascia;
+    drone.save();
+    return res.send({
+      success: true,
+      extra: 'Nuovo Drone inserito'
+    });
+  });
+
+});
+
 //**************************************************************************************************
 
 //*****************************************Guide Tech**************************************************

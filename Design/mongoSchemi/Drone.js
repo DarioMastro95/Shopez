@@ -20,5 +20,5 @@ var droneSchema = new mongoose.Schema({
   fascia:{type:String}
 });
 
-var Tablet = mongoose.model('drone',droneSchema);
-module.exports= Tablet;
+var Drone = mongoose.model('drone',droneSchema);
+module.exports= Drone;

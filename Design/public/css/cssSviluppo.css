@@ -246,15 +246,15 @@ header.masthead {
 }
 
 .proContent {
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   width: 100%;
-  height: 6em;
+  height: auto;
 }
 
 .controContent {
-  background-color: #ffffff;
+  background-color: #f9f9f9;
   width: 100%;
-  height: 6em;
+  height: auto;
 }
 
 ul.proUl {

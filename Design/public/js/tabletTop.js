@@ -5,24 +5,23 @@ $(document).ready(function() {
       if(response){
         response.forEach(function(tablet,index) {
         var parent;
-        switch (index) {
-          case 0:
+        switch (tablet.position) {
+          case 1:
             parent = '#primariga'
             break;
-          case 1:
+          case 2:
             parent = '#secondariga'
             break;
-          case 2:
+          case 3:
             parent = '#terzariga'
             break;
-          case 3:
+          case 4:
             parent = '#quartariga'
             break;
-          case 4:
+          case 5:
             parent = '#quintariga'
             break;
           default:
-
         }
           $(parent).find('.titolo').append(tablet.titolo);
           $(parent).find('.immagine').attr('src',tablet.immagine);

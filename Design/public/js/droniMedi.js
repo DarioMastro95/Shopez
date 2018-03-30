@@ -5,20 +5,20 @@ $(document).ready(function() {
       if(response){
         response.forEach(function(drone,index) {
         var parent;
-        switch (index) {
-          case 0:
+        switch (drone.position) {
+          case 1:
             parent = '#primariga'
             break;
-          case 1:
+          case 2:
             parent = '#secondariga'
             break;
-          case 2:
+          case 3:
             parent = '#terzariga'
             break;
-          case 3:
+          case 4:
             parent = '#quartariga'
             break;
-          case 4:
+          case 5:
             parent = '#quintariga'
             break;
           default:
@@ -29,7 +29,7 @@ $(document).ready(function() {
           $(parent).find('.link').attr('href',drone.link);
           $(parent).find('.recensione').append(drone.recensione);
           $(parent).find('.autonomia').append(drone.autonomia);
-          $(parent).find('.dimensione').append(drone.dimensione);
+          $(parent).find('.dimensioni').append(drone.dimensione);
           $(parent).find('.risoluzione').append(drone.risoluzione);
           $(parent).find('.distanza').append(drone.distanza);
           $(parent).find('.controller').append(drone.controller);
