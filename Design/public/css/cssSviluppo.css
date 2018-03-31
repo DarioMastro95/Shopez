@@ -738,6 +738,12 @@ a:active, a:focus, a:hover {
     margin-bottom: 1.5em;
     margin-left: 0em;
   }
+  .chisiamo {
+    padding-top: 20px;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+  }
 
 }
 

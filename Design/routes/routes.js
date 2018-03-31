@@ -9,7 +9,11 @@ var GuidaSalute = require('../mongoSchemi/guidaSalute');
 var GuidaFinanza = require('../mongoSchemi/guidaFinanza');
 var User = require('../mongoSchemi/User');
 
-//********************************************get pagine**********************************************
+//********************************************Servizi pagine**********************************************
+//get home
+router.get('/', function(req, res) {
+  res.redirect('/home');
+});
 //dashboard
 router.get('/dashboard', function(req, res) {
   if (!req.session.user) {
@@ -53,13 +57,21 @@ router.get('/dashboard/nuovaanteprimaguida', function(req, res) {
 router.get('/home/guideacquistotech', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'guideTech'));
 });
+//get pcTop
+router.get('/home/miglioripc/pctop', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'pcTop'));
+});
+//get pcMedi
+router.get('/home/miglioripc/pcmedi', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'pcMedi'));
+});
+//get pcBassi
+router.get('/home/miglioripc/pcbassi', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'pcBassi'));
+});
 //get smartphoneTop
 router.get('/home/migliorismartphone/smartphonetop', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'smartphoneTop'));
-});
-//get home
-router.get('/', function(req, res) {
-  res.redirect('/home');
 });
 //get smartphoneMedi
 router.get('/home/migliorismartphone/smartphonemedi', function(req, res) {
@@ -131,7 +143,7 @@ router.get('/login', function(req, res) {
 });
 
 //get scelta pc
-router.get('/home/miglioripcportatili', function(req, res) {
+router.get('/home/miglioripc', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'miglioripc'));
 });
 //get scelta fotocamere
