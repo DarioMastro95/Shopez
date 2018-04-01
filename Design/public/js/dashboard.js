@@ -2,11 +2,13 @@ $(document).ready(function() {
   $('#smartphoneCar').show();
   $('#tabletCar').hide();
   $('#droneCar').hide();
+  $('#tvCar').hide();
   $('#Categoria').change(function(){
     if($('#Categoria').val()=='Smartphone'){
       $('#smartphoneCar').show();
       $('#tabletCar').hide();
       $('#droneCar').hide();
+      $('#tvCar').hide();
       $('#buttonLoadArt').click(function(event){
         event.preventDefault();
           var smartphone = {
@@ -49,6 +51,7 @@ $(document).ready(function() {
       $('#smartphoneCar').hide();
       $('#tabletCar').show();
       $('#droneCar').hide();
+      $('#tvCar').hide();
       $('#buttonLoadArt').click(function(event){
         event.preventDefault();
           var tablet = {
@@ -91,6 +94,7 @@ $(document).ready(function() {
       $('#smartphoneCar').hide();
       $('#tabletCar').hide();
       $('#droneCar').show();
+      $('#tvCar').hide();
       $('#buttonLoadArt').click(function(event){
         event.preventDefault();
         var drone = {
@@ -128,7 +132,47 @@ $(document).ready(function() {
         location.reload().delay(1000);
       });
     }
-  });
+    else if($('#Categoria').val()=='Smart Tv'){
+    $('#smartphoneCar').hide();
+    $('#tabletCar').hide();
+    $('#droneCar').hide();
+    $('#tvCar').show();
+    $('#buttonLoadArt').click(function(event){
+      event.preventDefault();
+      var tv = {
+          titolo:$('#titolo').val(),
+          recensione:$('#recensione').val(),
+          immagine:$('#immagine').val(),
+          link:$('#link').val(),
+          schermo:$('#schermoTv').val(),
+          dimensioni:$('#dimensioniTv').val(),
+          tecnologia:$('#tecnologiaTv').val(),
+          peso:$('#pesoTv').val(),
+          pro:$('#pro').val().split(','),
+          contro:$('#contro').val().split(','),
+          position:$('#position').val(),
+          fascia:$('#fascia').val()
+        }
+      $.post(
+        '/tv',
+        tv,
+        function(response){
+          if(response.success){
+            alert(response.extra+' '+tv.titolo);
+          }
+          else{
+            alert(response.extra);
+          }
+        }
+      );
+      $('.formDashboard').each(function(index,element) {
+        element.reset();
+      });
+
+      location.reload().delay(1000);
+    });
+  }
+});
 
   $('#bold').click(function(event) {
     $('#recensione').val($('#recensione').val()+('<b></b>'));

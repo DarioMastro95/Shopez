@@ -4,6 +4,7 @@ var router = express.Router();
 var Smartphone = require('../mongoSchemi/Smartphone');
 var Tablet = require('../mongoSchemi/Tablet');
 var Drone = require('../mongoSchemi/Drone');
+var Tv = require('../mongoSchemi/Tv');
 var GuidaTech = require('../mongoSchemi/guidaTech');
 var GuidaSalute = require('../mongoSchemi/guidaSalute');
 var GuidaFinanza = require('../mongoSchemi/guidaFinanza');
@@ -346,6 +347,98 @@ router.post('/tablet', function(req, res) {
     return res.send({
       success: true,
       extra: 'Nuovo tablet inserito'
+    });
+  });
+
+});
+//***********************************************************************************************
+
+//*****************************************SmartTv********************************************
+
+//get drone in base alla fascia
+router.get('/tv/:fascia', function(req, res) {
+  var fasciaTv = req.params.fascia;
+  var fascia;
+  switch (fasciaTv) {
+    case 'Fasciaalta':
+      fascia = 'Fascia alta';
+      break;
+    case 'Fasciamedia':
+      fascia = 'Fascia media';
+      break;
+    case 'Fasciabassa':
+      fascia = 'Fascia bassa';
+      break;
+    default:
+
+  }
+  Tv.find({
+    fascia: fascia
+  }, function(err, tvs) {
+    if (err) {
+      return res.send('Nessun Drone')
+    }
+    return res.send(tvs);
+  });
+});
+// post drone in db
+router.post('/tv', function(req, res) {
+  if (!req.session.user) {
+    return res.status(400).send();
+  }
+
+  var fascia = req.body.fascia;
+  var position = req.body.position;
+    console.log(fascia);
+      console.log(position);
+  Tv.findOne({
+    fascia: fascia,
+    position: position
+  }, function(err, findedTv) {
+    if (err) {
+      return res.send({
+        success: false,
+        extra: err.toString()
+      });
+    }
+    if (findedTv) {
+      findedTv.titolo = req.body.titolo;
+      findedTv.recensione = req.body.recensione;
+      findedTv.immagine = req.body.immagine;
+      findedTv.link = req.body.link;
+      findedTv.peso = req.body.peso;
+      findedTv.tecnologia = req.body.tecnologia;
+      findedTv.schermo = req.body.schermo;
+      findedTv.dimensioni = req.body.dimensioni;
+      findedTv.so = req.body.so;
+      findedTv.pro = req.body.pro;
+      findedTv.contro = req.body.contro;
+      findedTv.position = req.body.position;
+      findedTv.fascia = req.body.fascia;
+      findedTv.save();
+      return res.send({
+        success: true,
+        extra: 'Tv sovrascritto'
+      });
+    }
+    var tv = new Tv();
+    tv.titolo = req.body.titolo;
+    tv.recensione = req.body.recensione;
+    tv.immagine = req.body.immagine;
+    tv.link = req.body.link;
+    tv.peso = req.body.peso;
+    tv.tecnologia = req.body.tecnologia;
+    tv.schermo = req.body.schermo;
+    tv.dimensioni = req.body.dimensioni;
+    tv.so = req.body.so;
+    tv.pro = req.body.pro;
+    tv.contro = req.body.contro;
+    tv.position = req.body.position;
+    tv.fascia = req.body.fascia;
+    tv.save();
+    return res.send({
+      success: true,
+      extra: 'Nuova Tv inserita'
     });
   });
 
