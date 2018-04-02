@@ -32,8 +32,8 @@ $(document).ready(function() {
           $(parent).find('.webcam').append(pc.webcam);
           $(parent).find('.memoria').append(pc.memoria);
           $(parent).find('.ram').append(pc.ram);
-          $(parent).find('.sistemaoperativo').append(pc.schedavideo);
-          $(parent).find('.gpc').append(pc.rete);
+          $(parent).find('.sistemaoperativo').append(pc.sistemaoperativo);
+          $(parent).find('.gpu').append(pc.schedavideo);
           $(parent).find('.batteria').append(pc.batteria);
           if(pc.pro[0]!=''){
             for (var i = 0; i < pc.pro.length; i++) {
