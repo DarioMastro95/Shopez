@@ -5,6 +5,7 @@ var Smartphone = require('../mongoSchemi/Smartphone');
 var Tablet = require('../mongoSchemi/Tablet');
 var Drone = require('../mongoSchemi/Drone');
 var Tv = require('../mongoSchemi/Tv');
+var Pc = require('../mongoSchemi/Pc');
 var GuidaTech = require('../mongoSchemi/guidaTech');
 var GuidaSalute = require('../mongoSchemi/guidaSalute');
 var GuidaFinanza = require('../mongoSchemi/guidaFinanza');
@@ -250,6 +251,101 @@ router.post('/smartphone', function(req, res) {
     return res.send({
       success: true,
       extra: 'Nuovo smartphone inserito'
+    });
+  });
+
+});
+//***********************************************************************************************
+
+//*****************************************Pc portatili********************************************
+
+//get smartphone in base alla fascia
+router.get('/pc/:fascia', function(req, res) {
+  var fasciaPc = req.params.fascia;
+  var fascia;
+  switch (fasciaPc) {
+    case 'Fasciaalta':
+      fascia = 'Fascia alta';
+      break;
+    case 'Fasciamedia':
+      fascia = 'Fascia media';
+      break;
+    case 'Fasciabassa':
+      fascia = 'Fascia bassa';
+      break;
+    default:
+
+  }
+  Pc.find({
+    fascia: fascia
+  }, function(err, pcs) {
+    if (err) {
+      return res.send('Nessuno Pc')
+    }
+    return res.send(pcs);
+  });
+});
+// post smartphone in db
+router.post('/pc', function(req, res) {
+  if (!req.session.user) {
+    return res.status(400).send();
+  }
+  var fascia = req.body.fascia;
+  var position = req.body.position;
+  Pc.findOne({
+    fascia: fascia,
+    position: position
+  }, function(err, findedPc) {
+    if (err) {
+      return res.send({
+        success: false,
+        extra: err.toString()
+      });
+    }
+    if (findedPc) {
+      findedPc.titolo = req.body.titolo;
+      findedPc.recensione = req.body.recensione;
+      findedPc.immagine = req.body.immagine;
+      findedPc.link = req.body.link;
+      findedPc.batteria = req.body.batteria;
+      findedPc.webcam = req.body.webcam;
+      findedPc.monitor = req.body.monitor;
+      findedPc.memoria = req.body.memoria;
+      findedPc.processore = req.body.processore;
+      findedPc.ram = req.body.ram;
+      findedPc.schedavideo = req.body.schedavideo;
+      findedPc.sistemaoperativo = req.body.sistemaoperativo;
+      findedPc.pro = req.body.pro;
+      findedPc.contro = req.body.contro;
+      findedPc.position = req.body.position;
+      findedPc.fascia = req.body.fascia;
+      findedPc.save();
+      return res.send({
+        success: true,
+        extra: 'Pc sovrascritto'
+      });
+    }
+    var pc = new Pc();
+    pc.titolo = req.body.titolo;
+    pc.recensione = req.body.recensione;
+    pc.immagine = req.body.immagine;
+    pc.link = req.body.link;
+    pc.batteria = req.body.batteria;
+    pc.webcam = req.body.webcam;
+    pc.monitor = req.body.monitor;
+    pc.memoria = req.body.memoria;
+    pc.processore = req.body.processore;
+    pc.ram = req.body.ram;
+    pc.schedavideo = req.body.schedavideo;
+    pc.sistemaoperativo = req.body.sistemaoperativo;
+    pc.pro = req.body.pro;
+    pc.contro = req.body.contro;
+    pc.position = req.body.position;
+    pc.fascia = req.body.fascia;
+    pc.save();
+    return res.send({
+      success: true,
+      extra: 'Nuovo pc inserito'
     });
   });
 

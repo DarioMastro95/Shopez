@@ -3,12 +3,14 @@ $(document).ready(function() {
   $('#tabletCar').hide();
   $('#droneCar').hide();
   $('#tvCar').hide();
+  $('#pcCar').hide();
   $('#Categoria').change(function(){
     if($('#Categoria').val()=='Smartphone'){
       $('#smartphoneCar').show();
       $('#tabletCar').hide();
       $('#droneCar').hide();
       $('#tvCar').hide();
+      $('#pcCar').hide();
       $('#buttonLoadArt').click(function(event){
         event.preventDefault();
           var smartphone = {
@@ -52,6 +54,7 @@ $(document).ready(function() {
       $('#tabletCar').show();
       $('#droneCar').hide();
       $('#tvCar').hide();
+      $('#pcCar').hide();
       $('#buttonLoadArt').click(function(event){
         event.preventDefault();
           var tablet = {
@@ -95,6 +98,7 @@ $(document).ready(function() {
       $('#tabletCar').hide();
       $('#droneCar').show();
       $('#tvCar').hide();
+      $('#pcCar').hide();
       $('#buttonLoadArt').click(function(event){
         event.preventDefault();
         var drone = {
@@ -133,45 +137,91 @@ $(document).ready(function() {
       });
     }
     else if($('#Categoria').val()=='Smart Tv'){
-    $('#smartphoneCar').hide();
-    $('#tabletCar').hide();
-    $('#droneCar').hide();
-    $('#tvCar').show();
-    $('#buttonLoadArt').click(function(event){
-      event.preventDefault();
-      var tv = {
-          titolo:$('#titolo').val(),
-          recensione:$('#recensione').val(),
-          immagine:$('#immagine').val(),
-          link:$('#link').val(),
-          schermo:$('#schermoTv').val(),
-          dimensioni:$('#dimensioniTv').val(),
-          tecnologia:$('#tecnologiaTv').val(),
-          peso:$('#pesoTv').val(),
-          pro:$('#pro').val().split(','),
-          contro:$('#contro').val().split(','),
-          position:$('#position').val(),
-          fascia:$('#fascia').val()
-        }
-      $.post(
-        '/tv',
-        tv,
-        function(response){
-          if(response.success){
-            alert(response.extra+' '+tv.titolo);
+      $('#smartphoneCar').hide();
+      $('#tabletCar').hide();
+      $('#droneCar').hide();
+      $('#tvCar').show();
+      $('#pcCar').hide();
+      $('#buttonLoadArt').click(function(event){
+        event.preventDefault();
+        var tv = {
+            titolo:$('#titolo').val(),
+            recensione:$('#recensione').val(),
+            immagine:$('#immagine').val(),
+            link:$('#link').val(),
+            schermo:$('#schermoTv').val(),
+            dimensioni:$('#dimensioniTv').val(),
+            tecnologia:$('#tecnologiaTv').val(),
+            peso:$('#pesoTv').val(),
+            pro:$('#pro').val().split(','),
+            contro:$('#contro').val().split(','),
+            position:$('#position').val(),
+            fascia:$('#fascia').val()
           }
-          else{
-            alert(response.extra);
+        $.post(
+          '/tv',
+          tv,
+          function(response){
+            if(response.success){
+              alert(response.extra+' '+tv.titolo);
+            }
+            else{
+              alert(response.extra);
+            }
           }
-        }
-      );
-      $('.formDashboard').each(function(index,element) {
-        element.reset();
-      });
+        );
+        $('.formDashboard').each(function(index,element) {
+          element.reset();
+        });
 
-      location.reload().delay(1000);
-    });
-  }
+        location.reload().delay(1000);
+      });
+    }
+    else if($('#Categoria').val()=='Pc portatile'){
+      $('#smartphoneCar').hide();
+      $('#tabletCar').hide();
+      $('#droneCar').hide();
+      $('#tvCar').hide();
+      $('#pcCar').show();
+      $('#buttonLoadArt').click(function(event){
+        event.preventDefault();
+        var pc = {
+            titolo:$('#titolo').val(),
+            recensione:$('#recensione').val(),
+            immagine:$('#immagine').val(),
+            link:$('#link').val(),
+            batteria:$('#batteriaPc').val(),
+            webcam:$('#webcamPc').val(),
+            monitor:$('#monitorPc').val(),
+            memoria:$('#memoriaPc').val(),
+            processore:$('#processorePc').val(),
+            ram:$('#ramPc').val(),
+            schedavideo:$('#schedavideoPc').val(),
+            sistemaoperativo:$('#sistemaoperativoPc').val(),
+            pro:$('#pro').val().split(','),
+            contro:$('#contro').val().split(','),
+            position:$('#position').val(),
+            fascia:$('#fascia').val()
+          }
+        $.post(
+          '/pc',
+          pc,
+          function(response){
+            if(response.success){
+              alert(response.extra+' '+pc.titolo);
+            }
+            else{
+              alert(response.extra);
+            }
+          }
+        );
+        $('.formDashboard').each(function(index,element) {
+          element.reset();
+        });
+
+        location.reload().delay(1000);
+      });
+    }
 });
 
   $('#bold').click(function(event) {
