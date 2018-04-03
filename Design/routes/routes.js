@@ -59,6 +59,10 @@ router.get('/dashboard/nuovaanteprimaguida', function(req, res) {
 router.get('/home/guideacquistotech', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'guideTech'));
 });
+//get guide saluteù
+router.get('/home/guideacquistosalute', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'guideSalute'));
+});
 //get pcTop
 router.get('/home/miglioripc/pctop', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'pcTop'));
@@ -158,6 +162,29 @@ router.get('/home/miglioridroni', function(req, res) {
 //get contatti
 router.get('/home/contatti', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'contatti'));
+});
+//get anteprima guide per categoria
+router.get('/guide/Tecnologia', function(req, res) {
+      GuidaTech.find({
+        'anteprima.categoria':'Tecnologia'
+      }, function(err, anteprimaGuidat) {
+        if (err) {
+          return res.send('Nessuna anteprima ')
+        }
+        return res.send(anteprimaGuidat);
+      });
+
+});
+router.get('/guide/Salute', function(req, res) {
+      GuidaSalute.find({
+        'anteprima.categoria':'Salute'
+      }, function(err, anteprimaGuidas) {
+        if (err) {
+          return res.send('Nessuna anteprima ')
+        }
+        return res.send(anteprimaGuidas);
+      });
+
 });
 //***********************************************************************************************
 
@@ -639,7 +666,7 @@ router.post('/drone', function(req, res) {
 
 //*****************************************Guide Tech**************************************************
 //post anteprima
-router.post('/anteprimaGuida', function(req, res) {
+router.post('/anteprimaGuidaTech', function(req, res) {
   if (!req.session.user) {
     return res.status(400).send();
   }
@@ -669,7 +696,7 @@ router.post('/anteprimaGuida', function(req, res) {
     guidaTech.save();
     return res.send({
       success: true,
-      extra: 'Nuova preview inserita'
+      extra: 'Nuova anteprima guida tech inserita'
     });
   });
 });
@@ -695,7 +722,7 @@ router.post('/guidaTech', function(req, res) {
       findedGuida.save();
       return res.send({
         success: true,
-        extra: 'Nuova guida inserita'
+        extra: 'Nuova guida tech inserita'
       });
     }
   });
@@ -706,23 +733,11 @@ router.get('/guideTech/:titolo', function(req, res) {
   var titolo = req.params.titolo;
   GuidaTech.findOne({
     'anteprima.titolo':titolo
-  }, function(err, titoloGuida) {
+  }, function(err, titoloGuidaTech) {
     if (err) {
-      return res.send('Nessuna guida ' + titoloGuida)
+      return res.send('Nessuna guida ' + titoloGuidaTech)
     }
-    return res.send(titoloGuida);
-  });
-});
-//get anteprima
-router.get('/guide/:categoria', function(req, res) {
-  var categoriaGuida = req.params.categoria;
-  GuidaTech.find({
-    'anteprima.categoria':categoriaGuida
-  }, function(err, anteprimaGuidas) {
-    if (err) {
-      return res.send('Nessuna anteprima ' + categoriaAnt)
-    }
-    return res.send(anteprimaGuidas);
+    return res.send(titoloGuidaTech);
   });
 });
 //get guidatech
@@ -732,11 +747,102 @@ router.get('/home/guideacquistotech/:link', function(req, res) {
     if(err){
       return res.send('Nessuna guida')
     }
-    res.render('guida',{
-      titolo:guidaTech.guida.titolo
+    res.render('guidaT',{
+      titoloT:guidaTech.guida.titolo
     });
   });
 });
+//**************************************************************************************************
+
+//*****************************************Guide Salute**************************************************
+//post anteprima
+router.post('/anteprimaGuidaSalute', function(req, res) {
+  if (!req.session.user) {
+    return res.status(400).send();
+  }
+  var titolo = req.body.titolo;
+  GuidaSalute.findOne({
+    titolo: titolo
+  }, function(err, findedGuida) {
+    if (err) {
+      return res.send({
+        success: false,
+        extra: err.toString()
+      });
+    }
+    if (findedGuida) {
+      return res.send({
+        success: true,
+        extra: 'Già presente nel db'
+      });
+    }
+    var guidaSalute= new GuidaSalute();
+    guidaSalute.anteprima.titolo = req.body.titolo;
+    guidaSalute.anteprima.anteprima = req.body.anteprima;
+    guidaSalute.anteprima.immagine = req.body.immagine;
+    guidaSalute.anteprima.data = req.body.data;
+    guidaSalute.anteprima.categoria = req.body.categoria;
+    guidaSalute.anteprima.link = req.body.link;
+    guidaSalute.save();
+    return res.send({
+      success: true,
+      extra: 'Nuova anteprima guida salute inserita'
+    });
+  });
+});
+//post guidaSalute
+router.post('/guidaSalute', function(req, res) {
+  if (!req.session.user) {
+    return res.status(400).send();
+  }
+  var titolo = req.body.titolo;
+  GuidaSalute.findOne({
+    'anteprima.titolo': titolo
+  }, function(err, findedGuida) {
+    if (err) {
+      return res.send({
+        success: false,
+        extra: err.toString()
+      });
+    }
+    if (findedGuida) {
+      findedGuida.guida.titolo = req.body.titolo;
+      findedGuida.guida.introduzione = req.body.introduzione;
+      findedGuida.guida.prodotti = req.body.prodotti;
+      findedGuida.save();
+      return res.send({
+        success: true,
+        extra: 'Nuova guida salute inserita'
+      });
+    }
+  });
+});
+
+//get titolo anteprimaSalute
+router.get('/guideSalute/:titolo', function(req, res) {
+  var titolo = req.params.titolo;
+  GuidaSalute.findOne({
+    'anteprima.titolo':titolo
+  }, function(err, titoloGuidaSalute) {
+    if (err) {
+      return res.send('Nessuna guida ' + titoloGuidaSalute)
+    }
+    return res.send(titoloGuidaSalute);
+  });
+});
+//get guidaSalute
+router.get('/home/guideacquistosalute/:link', function(req, res) {
+  var linkGuida = req.params.link;
+  GuidaSalute.findOne({'anteprima.link':linkGuida},function(err,guidaSalute){
+    if(err){
+      return res.send('Nessuna guida')
+    }
+    res.render('guidaS',{
+      titoloS:guidaSalute.guida.titolo
+    });
+  });
+});
+
 
 
 //****************************************Login page ***********************************************

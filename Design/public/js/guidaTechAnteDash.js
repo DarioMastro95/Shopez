@@ -8,30 +8,59 @@ $(document).ready(function() {
     var link=titolo.toLowerCase();
     link.replace(/\s/g, '');
     var data = $('#data').val();
-    var guidaTech= {
-      titolo: titolo,
-      immagine: immagine,
-      anteprima: anteprima,
-      data: data,
-      link: link,
-      categoria: tipo
-    };
-    console.log(guidaTech);
-    $.post(
-      '/anteprimaGuida',
-      guidaTech,
-      function(response) {
-        if (response.success) {
-          alert('Anteprima guida ' + guidaTech.titolo + ' inserito correttamente');
-        } else {
-          alert(response.extra);
+    if(tipo =='Tecnologia'){
+      var guidaTech= {
+        titolo: titolo,
+        immagine: immagine,
+        anteprima: anteprima,
+        data: data,
+        link: link,
+        categoria: tipo
+      };
+      console.log(guidaTech);
+      $.post(
+        '/anteprimaGuidaTech',
+        guidaTech,
+        function(response) {
+          if (response.success) {
+            alert('Anteprima guida ' + guidaTech.titolo + ' inserito correttamente');
+          } else {
+            alert(response.extra);
+          }
         }
-      }
-    );
+      );
 
-    $('.formDashboard').each(function(index, element) {
-      element.reset();
-    })
+      $('.formDashboard').each(function(index, element) {
+        element.reset();
+      })
+    }
+    else  if(tipo =='Salute'){
+      var guidaSalute= {
+        titolo: titolo,
+        immagine: immagine,
+        anteprima: anteprima,
+        data: data,
+        link: link,
+        categoria: tipo
+      };
+      console.log(guidaTech);
+      $.post(
+        '/anteprimaGuidaSalute',
+        guidaSalute,
+        function(response) {
+          if (response.success) {
+            alert('Anteprima guida ' + guidaSalute.titolo + ' inserito correttamente');
+          } else {
+            alert(response.extra);
+          }
+        }
+      );
+
+      $('.formDashboard').each(function(index, element) {
+        element.reset();
+      })
+    }
+
 
   });
   $('#bold').click(function(event) {
