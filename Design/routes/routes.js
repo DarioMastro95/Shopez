@@ -734,10 +734,10 @@ router.get('/home/guideacquistotech/:link', function(req, res) {
       return res.send('Nessuna guida')
     }
     res.render('guida',{
-      titolo:guidaTech.anteprima.titolo,
-      introduzione:guidaTech.guida.introduzione,
-      data:guidaTech.anteprima.data,
-      prodotti:guidaTech.guida.prodotti
+        titolo:guidaTech.anteprima.titolo,
+        introduzione:guidaTech.guida.introduzione,
+        data:guidaTech.anteprima.data,
+        prodotti:guidaTech.guida.prodotti
     });
   });
 });

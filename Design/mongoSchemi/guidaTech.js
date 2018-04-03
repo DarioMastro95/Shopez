@@ -21,7 +21,9 @@ var guidaTechSchema = new mongoose.Schema({
       nome:{type:String},
       immagine:{type:String},
       descrizione:{type:String},
-      link:{type:String}
+      link:{type:String},
+      pro:[String],
+      contro:[String]
     }]
   }
 });

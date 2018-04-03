@@ -35,7 +35,15 @@ $(document).ready(function () {
     validateTitle(titolo).then(function(result,err) {
       if (result) {
         for (var i = 0; i < counter; i++) {
-          prodotti.push({posizione:i,nome:$('#nomeP'+i).val(),link:$('#linkP'+i).val(),descrizione:$('#descrizioneP'+i).val(),immagine:$('#immagineP'+i).val()})
+          prodotti.push({
+            posizione:i,
+            nome:$('#nomeP'+i).val(),
+            link:$('#linkP'+i).val(),
+            descrizione:$('#descrizioneP'+i).val(),
+            immagine:$('#immagineP'+i).val(),
+            pro:$('#proP'+i).val().split(','),
+            contro:$('#controP'+i).val().split(','),
+          });
         }
       }
       guidaTech={
@@ -61,6 +69,7 @@ $(document).ready(function () {
   $('#AggiungiProdotto').click(function (event) {
     event.preventDefault();
     $('#Prodotti').append('<div class="separate"><h5>Prodotto ' + (counter + 1) + '</h5></div><div class="row"><div class="col-lg-6"><div class="form-group"><label for="immagineP' + counter + '">Immagine</label><input type="text" class="form-control" id="immagineP' + counter + '" aria-describedby="" placeholder="Url immagine prodotto"></div><div class="form-group"><label for="nomeP' + counter + '">Nome</label><input type="text" class="form-control" id="nomeP' + counter + '" aria-describedby="" placeholder="Nome prodotto"></div><div class="form-group"><label for="linkP' + counter + '">Link amazon</label><input type="text" class="form-control" id="linkP' + counter + '" aria-describedby="" placeholder="Url amazon"></div></div><div class="col-lg-6"><textarea class="form-control guidaDescrizioneP" id="descrizioneP' + counter + '" rows="10" placeholder="descrizione prodotto"></textarea></div></div>');
+    $('#Prodotti').append('<div class="form-group"><label for="pro">Pro</label><input type="text" class="form-control" id="proP' + counter + '" aria-describedby="" placeholder="pro,pro,pro,..."></div><div class="form-group"><label for="contro">Contro</label><input type="text" class="form-control" id="controP' + counter + '" aria-describedby="" placeholder="contro,contro,contro,..."></div>');
     counter = counter + 1;
   });
 

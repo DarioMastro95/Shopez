@@ -24,14 +24,27 @@
       <div class="container"></div>
     </header>
     <div class="container">
-      <div class="titolopag">
-        <h1><%=titolo %></h1>
+      <div id="titolo">
+        <h1>
+          <div class="titolopag"><%=titolo%></div>
+        </h1>
       </div>
       <div class="introduzioneGuida"id="introduzione">
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="titoloIntro">
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="dataIntro">
+              <%=data%>
+            </div>
+          </div>
+        </div>
         <%=introduzione%>
       </div>
-      <div class="#contenuto">
-        <%=prodotti[0].posizione%>
+      <hr>
+      <div id="contenuto">
       </div>
     </div>
     <div class="spacetoart">
@@ -50,6 +63,6 @@
     <script src="/js/jqBootstrapValidation.js"></script>
     <script src="/js/contact_me.js"></script>
     <script src="/js/freelancer.min.js"></script>
-    <script src="/js/anteprimaGuidaTech.js"></script>
+    <script src="/js/guidaTech.js"></script>
   </body>
 </html>
