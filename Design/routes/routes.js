@@ -139,7 +139,6 @@ router.get('/home/miglioridroni/dronibassi', function(req, res) {
 });
 
 //get Login
-
 router.get('/login', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'login'));
 });
@@ -734,10 +733,7 @@ router.get('/home/guideacquistotech/:link', function(req, res) {
       return res.send('Nessuna guida')
     }
     res.render('guida',{
-        titolo:guidaTech.anteprima.titolo,
-        introduzione:guidaTech.guida.introduzione,
-        data:guidaTech.anteprima.data,
-        prodotti:guidaTech.guida.prodotti
+      titolo:guidaTech.guida.titolo
     });
   });
 });

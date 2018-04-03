@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $.get(
-    '/guideTech/'+$('.titolopag').text(),
+    '/guideTech/'+$('#titolo').text(),
     function(response) {
       var guidaT;
       var nrprodotti;

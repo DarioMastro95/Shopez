@@ -21,14 +21,14 @@
   <body id="page-top">
     <% include nav %>
     <header class="masthead bg-guidetech text-white text-center">
-      <div class="container"></div>
+      <div class="container">
+          <a class="backLabel" href="/home/guideacquistotech"><i class="fas fa-arrow-left"></i>  INDIETRO</a>
+      </div>
     </header>
     <div class="container">
-      <div id="titolo">
         <h1>
-          <div class="titolopag"><%=titolo%></div>
+          <div id="titolo" class="titolopag"><%=titolo%></div>
         </h1>
-      </div>
       <div class="introduzioneGuida"id="introduzione">
         <div class="row">
           <div class="col-lg-9">
@@ -37,11 +37,10 @@
           </div>
           <div class="col-lg-3">
             <div class="dataIntro">
-              <%=data%>
+
             </div>
           </div>
         </div>
-        <%=introduzione%>
       </div>
       <hr>
       <div id="contenuto">
