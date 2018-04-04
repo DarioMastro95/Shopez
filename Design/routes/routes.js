@@ -6,6 +6,7 @@ var Tablet = require('../mongoSchemi/Tablet');
 var Drone = require('../mongoSchemi/Drone');
 var Tv = require('../mongoSchemi/Tv');
 var Pc = require('../mongoSchemi/Pc');
+var Fotocamera = require('../mongoSchemi/Fotocamere');
 var GuidaTech = require('../mongoSchemi/guidaTech');
 var GuidaSalute = require('../mongoSchemi/guidaSalute');
 var GuidaFinanza = require('../mongoSchemi/guidaFinanza');
@@ -118,6 +119,18 @@ router.get('/home/miglioritablet/tvMedie', function(req, res) {
 //get tv bassi
 router.get('/home/miglioritablet/tvBasse', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'tvBasse'));
+});
+//get foto top
+router.get('/home/migliorifotocamere/fotocamereTop', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'fotocamereTop'));
+});
+//get foto medie
+router.get('/home/migliorifotocamere/fotocamereMedie', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'fotocamereMedie'));
+});
+//get foto basse
+router.get('/home/migliorifotocamere/fotocamereBasse', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'fotocamereBasse'));
 });
 //get drone top
 router.get('/home/miglioridroni/dronitop', function(req, res) {
@@ -469,6 +482,97 @@ router.post('/tablet', function(req, res) {
     return res.send({
       success: true,
       extra: 'Nuovo tablet inserito'
+    });
+  });
+
+});
+//***********************************************************************************************
+
+//*****************************************Fotocamera********************************************
+//get tablet in base alla fascia
+router.get('/fotocamere/:fascia', function(req, res) {
+  var fasciaFotocamera = req.params.fascia;
+  var fascia;
+  switch (fasciaFotocamera) {
+    case 'Fasciaalta':
+      fascia = 'Fascia alta';
+      break;
+    case 'Fasciamedia':
+      fascia = 'Fascia media';
+      break;
+    case 'Fasciabassa':
+      fascia = 'Fascia bassa';
+      break;
+    default:
+
+  }
+  Fotocamera.find({
+    fascia: fascia
+  }, function(err, fotos) {
+    if (err) {
+      return res.send('Nessuna Fotocamera')
+    }
+    return res.send(fotos);
+  });
+});
+// post tablet in db
+router.post('/fotocamera', function(req, res) {
+  if (!req.session.user) {
+    return res.status(400).send();
+  }
+
+  var fascia = req.body.fascia;
+  var position = req.body.position;
+  Fotocamera.findOne({
+    fascia: fascia,
+    position: position
+  }, function(err, findedFoto) {
+    if (err) {
+      return res.send({
+        success: false,
+        extra: err.toString()
+      });
+    }
+    if (findedFoto) {
+      findedFoto.titolo = req.body.titolo;
+      findedFoto.recensione = req.body.recensione;
+      findedFoto.immagine = req.body.immagine;
+      findedFoto.link = req.body.link;
+      findedFoto.risoluzione = req.body.risoluzione;
+      findedFoto.sensore = req.body.sensore;
+      findedFoto.display = req.body.display;
+      findedFoto.memoria = req.body.memoria;
+      findedFoto.zoom = req.body.zoom;
+      findedFoto.peso = req.body.peso;
+      findedFoto.pro = req.body.pro;
+      findedFoto.contro = req.body.contro;
+      findedFoto.position = req.body.position;
+      findedFoto.fascia = req.body.fascia;
+      findedFoto.save();
+      return res.send({
+        success: true,
+        extra: 'Footcamera sovrascritta'
+      });
+    }
+    var fotocamera = new Fotocamera();
+    fotocamera.titolo = req.body.titolo;
+    fotocamera.recensione = req.body.recensione;
+    fotocamera.immagine = req.body.immagine;
+    fotocamera.link = req.body.link;
+    fotocamera.risoluzione = req.body.risoluzione;
+    fotocamera.sensore = req.body.sensore;
+    fotocamera.display = req.body.display;
+    fotocamera.memoria = req.body.memoria;
+    fotocamera.zoom = req.body.zoom;
+    fotocamera.peso = req.body.peso;
+    fotocamera.pro = req.body.pro;
+    fotocamera.contro = req.body.contro;
+    fotocamera.position = req.body.position;
+    fotocamera.fascia = req.body.fascia;
+    fotocamera.save();
+    return res.send({
+      success: true,
+      extra: 'Nuova fotocamera inserita'
     });
   });
 
