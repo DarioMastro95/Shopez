@@ -25,6 +25,7 @@ $(document).ready(function() {
         }
           $(parent).find('.titolo').append(tv.titolo);
           $(parent).find('.immagine').attr('src',tv.immagine);
+          $(parent).find('.immagine').attr('alt',tv.titolo);
           $(parent).find('.link').attr('href',tv.link);
           $(parent).find('.recensione').append(tv.recensione);
           $(parent).find('.schermo').append(tv.schermo);

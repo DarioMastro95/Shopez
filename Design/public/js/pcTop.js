@@ -25,6 +25,7 @@ $(document).ready(function() {
         }
           $(parent).find('.titolo').append(pc.titolo);
           $(parent).find('.immagine').attr('src',pc.immagine);
+          $(parent).find('.immagine').attr('alt',pc.titolo);
           $(parent).find('.link').attr('href',pc.link);
           $(parent).find('.recensione').append(pc.recensione);
           $(parent).find('.processore').append(pc.processore);

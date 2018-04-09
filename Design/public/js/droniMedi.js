@@ -26,6 +26,7 @@ $(document).ready(function() {
         }
           $(parent).find('.titolo').append(drone.titolo);
           $(parent).find('.immagine').attr('src',drone.immagine);
+          $(parent).find('.immagine').attr('alt',drone.titolo);
           $(parent).find('.link').attr('href',drone.link);
           $(parent).find('.recensione').append(drone.recensione);
           $(parent).find('.autonomia').append(drone.autonomia);

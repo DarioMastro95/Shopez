@@ -25,6 +25,7 @@ $(document).ready(function() {
         }
           $(parent).find('.titolo').append(smartphone.titolo);
           $(parent).find('.immagine').attr('src',smartphone.immagine);
+          $(parent).find('.immagine').attr('alt',smartphone.titolo);
           $(parent).find('.link').attr('href',smartphone.link);
           $(parent).find('.recensione').append(smartphone.recensione);
           $(parent).find('.processore').append(smartphone.processore);

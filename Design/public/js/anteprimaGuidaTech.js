@@ -14,6 +14,7 @@ $(document).ready(function() {
           j++;
           $('#'+parent[index]).find('.titolo').append(anteprimaGuida.anteprima.titolo);
           $('#'+parent[index]).find('.imgGuida').attr('src', anteprimaGuida.anteprima.immagine);
+          $('#'+parent[index]).find('.imgGuida').attr('alt', anteprimaGuida.anteprima.titolo);
           $('#'+parent[index]).find('.linkGuida').attr('href','/home/guideacquistotech/'+anteprimaGuida.anteprima.link);
           $('#'+parent[index]).find('.testoPrev').append(anteprimaGuida.anteprima.anteprima);
           $('#'+parent[index]).find('.dataGuida').append(anteprimaGuida.anteprima.data)

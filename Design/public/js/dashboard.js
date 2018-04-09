@@ -5,6 +5,9 @@ $(document).ready(function() {
   $('#tvCar').hide();
   $('#pcCar').hide();
   $('#fotoCar').hide();
+  if($('#Categoria').val()==''){
+    alert('Selezionare una categoria');
+  }
 });
 
 $('#Categoria').change(function(){
@@ -41,6 +44,7 @@ $('#Categoria').change(function(){
           function(response){
             if(response.success){
               alert(response.extra+' '+smartphone.titolo);
+              location.reload();
             }
             else{
               alert(response.extra);
@@ -85,6 +89,7 @@ $('#Categoria').change(function(){
           function(response){
             if(response.success){
               alert(response.extra+' '+tablet.titolo);
+              location.reload();
             }
             else{
               alert(response.extra);
@@ -127,6 +132,7 @@ $('#Categoria').change(function(){
         function(response){
           if(response.success){
             alert(response.extra+' '+drone.titolo);
+            location.reload();
           }
           else{
             alert(response.extra);
@@ -211,6 +217,7 @@ $('#Categoria').change(function(){
         function(response){
           if(response.success){
             alert(response.extra+' '+pc.titolo);
+            location.reload();
           }
           else{
             alert(response.extra);
@@ -253,6 +260,7 @@ $('#Categoria').change(function(){
         function(response){
           if(response.success){
             alert(response.extra+' '+fotocamera.titolo);
+            location.reload();
           }
           else{
             alert(response.extra);

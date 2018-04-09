@@ -25,6 +25,7 @@ $(document).ready(function() {
         }
           $(parent).find('.titolo').append(fotocamera.titolo);
           $(parent).find('.immagine').attr('src',fotocamera.immagine);
+          $(parent).find('.immagine').attr('alt',fotocamera.titolo);
           $(parent).find('.link').attr('href',fotocamera.link);
           $(parent).find('.recensione').append(fotocamera.recensione);
           $(parent).find('.zoom').append(fotocamera.zoom);
