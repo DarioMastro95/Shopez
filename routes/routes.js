@@ -76,6 +76,10 @@ router.get('/home/miglioripc/pcmedi', function(req, res) {
 router.get('/home/miglioripc/pcbassi', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'pcBassi'));
 });
+//get privacy
+router.get('/terminiservizio', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'privacy'));
+});
 //get smartphoneTop
 router.get('/home/migliorismartphone/smartphonetop', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'smartphoneTop'));
