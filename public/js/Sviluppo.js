@@ -87,8 +87,8 @@ $(document).ready(function() {
       me.style.webkitAnimation = '';
     }, 10);
   });
-  $('#logonav').addClass('animated pulse');
-
+  $('#logonavm').addClass('animated pulse');
+  $('#logonavp').addClass('animated pulse');
 
 
 });
