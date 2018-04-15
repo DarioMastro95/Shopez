@@ -72,6 +72,10 @@ router.get('/home/miglioripc/pctop', function(req, res) {
 router.get('/home/miglioripc/pcmedi', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'pcMedi'));
 });
+//get coming soon
+router.get('/comingsoon', function(req, res) {
+  res.render(path.join(__dirname, '..', 'public', 'soon'));
+});
 //get pcBassi
 router.get('/home/miglioripc/pcbassi', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'pcBassi'));
