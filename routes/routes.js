@@ -10,6 +10,7 @@ var Fotocamera = require('../mongoSchemi/Fotocamere');
 var GuidaTech = require('../mongoSchemi/guidaTech');
 var GuidaSalute = require('../mongoSchemi/guidaSalute');
 var GuidaFinanza = require('../mongoSchemi/guidaFinanza');
+var News = require('../mongoSchemi/News');
 var User = require('../mongoSchemi/User');
 
 //********************************************Servizi pagine**********************************************
@@ -85,15 +86,22 @@ router.get('/terminiservizio', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'privacy'));
 });
 //get smartphoneTop
-router.get('/home/migliorismartphone/smartphonetop', function(req, res) {
+router.get('/home/migliori-smartphone/i-5-migliori-smartphone-2018-sopra-i-400-euro', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'smartphoneTop'));
 });
 //get smartphoneMedi
-router.get('/home/migliorismartphone/smartphonemedi', function(req, res) {
+router.get('/home/migliori-smartphone/i-5-migliori-smartphone-2018-tra-i-400-200-euro', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'smartphoneMedi'));
 });
+router.get('/dashboard/nuovanews', function(req, res) {
+  if (!req.session.user) {
+    return res.status(400).send();
+  }
+  res.render(path.join(__dirname, '..', 'views', 'adminNews'));
+});
+
 //get smartphoneBassi
-router.get('/home/migliorismartphone/smartphonebassi', function(req, res) {
+router.get('/home/migliori-smartphone/i-5-migliori-smartphone-2018-sotto-i-199-euro', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'smartphoneBassi'));
 });
 // get home
@@ -101,7 +109,7 @@ router.get('/home', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'index'));
 });
 //get scelta smartphone
-router.get('/home/migliorismartphone', function(req, res) {
+router.get('/home/migliori-smartphone', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'migliorismartphone'));
 });
 //get tablet top
@@ -716,7 +724,7 @@ router.post('/drone', function(req, res) {
   var fascia = req.body.fascia;
   var position = req.body.position;
     console.log(fascia);
-      console.log(position);
+    console.log(position);
   Drone.findOne({
     fascia: fascia,
     position: position
@@ -955,6 +963,59 @@ router.get('/home/guideacquistosalute/:link', function(req, res) {
   });
 });
 
+//**************************************** News ***********************************************
+
+router.post('/news', function(req, res) {
+  if (!req.session.user) {
+    return res.status(400).send();
+  }
+  var position = req.body.position;
+  News.findOne({
+    'position': position
+  }, function(err, findedNews) {
+    if (err) {
+      return res.send({
+        success: false,
+        extra: err.toString()
+      });
+    }
+    if (findedNews) {
+      findedNews.titolo = req.body.titolo;
+      findedNews.data  = req.body.data;
+      findedNews.immagine = req.body.immagine;
+      findedNews.link = req.body.link;
+      findedNews.position=req.body.position;
+      findedNews.save();
+      return res.send({
+        success: true,
+        extra: 'Già presente nel db'
+      });
+    }
+    var news= new News();
+    news.titolo = req.body.titolo;
+    news.data  = req.body.data;
+    news.immagine = req.body.immagine;
+    news.link = req.body.link;
+    news.position=req.body.position;
+    news.save();
+    return res.send({
+      success: true,
+      extra: 'Nuova News inserita'
+    });
+  });
+});
+
+//get titolo anteprimaTech
+router.get('/newshome', function(req, res) {
+  var titolo = req.params.titolo;
+  News.find({
+  }, function(err, News) {
+    if (err) {
+      return res.send('Nessuna news ')
+    }
+    return res.send(News);
+  });
+});
 
 
 //****************************************Login page ***********************************************

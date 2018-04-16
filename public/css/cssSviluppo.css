@@ -7,7 +7,14 @@
 .bg-primary {
   background-color: #E5007D !important;
 }
-
+h2{
+  font-size:18px;
+  font-weight: 500;
+}
+h6{
+  font-size:25px;
+  font-weight: 700;
+}
 .separate {
   margin-top: 3em;
   margin-bottom: 3em;
@@ -18,7 +25,7 @@
   height: 100%;
   margin-top: 1em;
 }
-.bannerTop{
+.bannerbottomPC{
   width: auto;
   height: 100%;
   margin-top: 1em;
@@ -46,6 +53,14 @@
   padding-right: 0.5em;
   font-size: 19px;
   text-align: justify;
+  height: auto;
+  font-family: 'Montserrat', sans-serif;
+}
+.introduzione{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  font-size: 19px;
+  text-align: center;
   height: auto;
   font-family: 'Montserrat', sans-serif;
 }
@@ -105,15 +120,16 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 }
 
 .dashChoseIns {
-  padding-top: 6em;
+  padding-top: 1.5em;
   border-radius: 8px;
   text-align: center;
   margin-top: 5em;
-  margin-left: 3em;
   margin-right: 3em;
   margin-bottom: 2em;
-  height: 15em;
+  height: 5em;
   width: auto;
+  font-size: 25px;
+  font-weight: 500;
   background-color: #E5007D;
 }
 
@@ -217,7 +233,18 @@ header.masthead {
   width: 0 !important;
   overflow-y: scroll;
 }
-
+a.linktelegram{
+  color:black;
+}
+a.linktelegram:hover{
+  color:#32afed;
+}
+a.linktelegram:active{
+  color:black;
+}
+a.linktelegram:visited{
+  color:black;
+}
 .titolo {
   width: 100%;
   text-align: center;
@@ -226,9 +253,12 @@ header.masthead {
 
 .titolopag {
   margin-top: 2em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   text-align: center;
   text-transform: uppercase;
+  font-weight: 700;
+  font-family: Montserrat;
+  font-size: 2.5rem
 }
 
 .subtitolo {
@@ -652,6 +682,9 @@ a.backLabel{
   .pc{
      display: none !important;
   }
+  .bannerbottomPC{
+    display: none!important;
+  }
 }
 @media (min-width: 991px){
   .mobile{
@@ -789,7 +822,7 @@ a:active, a:focus, a:hover {
     margin-left: 0px;
   }
   h1 {
-    font-size: 28px;
+    font-size: 25px;
   }
   .caratpic {
     height: 50px;
