@@ -57,6 +57,16 @@ router.get('/dashboard/nuovaanteprimaguida', function(req, res) {
   res.setHeader('Content-Type', 'text/html');
   res.sendFile(path.join(__dirname, '..', 'views', 'adminAnteprimaGuida.html'));
 });
+//get robots
+router.get('/robots.txt', function(req, res) {
+  res.setHeader('Content-Type', 'text/html');
+  res.sendFile(path.join(__dirname, '..', 'robots.txt'));
+});
+//get sitemap
+router.get('/sitemap.xml', function(req, res) {
+  res.setHeader('Content-Type', 'xml');
+  res.sendFile(path.join(__dirname, '..', 'sitemap.xml'));
+});
 //get guide tech
 router.get('/home/guideacquistotech', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'guideTech'));
