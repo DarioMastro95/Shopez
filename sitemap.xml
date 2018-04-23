@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://example.com/</loc>
+    <loc>https://www.shopezhub.com/home</loc>
+  </url>
+  <url>
+    <loc>https://www.shopezhub.com/home/migliori-smartphone</loc>
+  </url>
+  <url>
+    <loc>https://www.shopezhub.com/comingsoon</loc>
+  </url>
+  <url>
+    <loc>https://www.shopezhub.com/home/contatti</loc>
+  </url>
+  <url>
+    <loc>https://www.shopezhub.com/terminiservizio</loc>
+  </url>
+  <url>
+    <loc>https://www.shopezhub.com/home/migliori-smartphone/i-5-migliori-smartphone-2018-sopra-i-400-euro</loc>
+  </url>
+  <url>
+    <loc>https://www.shopezhub.com/home/migliori-smartphone/i-5-migliori-smartphone-2018-tra-i-400-200-euro</loc>
+  </url>
+  <url>
+    <loc>https://www.shopezhub.com/home/migliori-smartphone/i-5-migliori-smartphone-2018-sotto-i-199-euro</loc>
   </url>
 </urlset>
