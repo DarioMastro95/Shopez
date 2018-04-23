@@ -259,6 +259,14 @@ a.linktelegram:visited{
   font-family: Montserrat;
   font-size: 2.5rem
 }
+.titolocategorie {
+  margin-top: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: Montserrat;
+  font-size: 1.5em
+}
 
 .subtitolo {
   width: 100%;
