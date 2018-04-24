@@ -68,7 +68,7 @@ router.get('/sitemap.xml', function(req, res) {
   res.sendFile(path.join(__dirname, '..', 'sitemap.xml'));
 });
 //get guide tech
-router.get('/home/guideacquistotech', function(req, res) {
+router.get('/home/tecnologia-guide-all-acquisto', function(req, res) {
   res.render(path.join(__dirname, '..', 'public', 'guideTech'));
 });
 //get guide saluteù
@@ -878,7 +878,8 @@ router.get('/home/guideacquistotech/:link', function(req, res) {
       return res.send('Nessuna guida')
     }
     res.render('guidaT',{
-      titoloT:guidaTech.guida.titolo
+      titoloT:guidaTech.guida.titolo,
+      dataT:guidaTech.anteprima.data
     });
   });
 });
