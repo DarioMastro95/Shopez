@@ -16,7 +16,7 @@ var User = require('../mongoSchemi/User');
 //********************************************Servizi pagine**********************************************
 //get home
 router.get('/', function(req, res) {
-  res.redirect('/home');
+  res.render(path.join(__dirname, '..', 'public', 'index'));
 });
 //dashboard
 router.get('/dashboard', function(req, res) {
@@ -871,7 +871,7 @@ router.get('/guideTech/:titolo', function(req, res) {
   });
 });
 //get guidatech
-router.get('/home/guideacquistotech/:link', function(req, res) {
+router.get('/home/tecnologia-guide-all-acquisto/:link', function(req, res) {
   var linkGuida = req.params.link;
   GuidaTech.findOne({'anteprima.link':linkGuida},function(err,guidaTech){
     if(err){
