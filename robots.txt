@@ -1,7 +1,5 @@
-User-agent: Googlebot
-Disallow: /nogooglebot/
-
 User-agent: *
-Allow: /
-
+Allow: *
+Disallow: /home/migliori-smartphone
+Disallow: /home/contatti
 Sitemap: https://www.shopezhub.com/sitemap.xml
