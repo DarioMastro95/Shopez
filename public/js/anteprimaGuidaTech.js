@@ -14,7 +14,7 @@ $(document).ready(function() {
           $('#'+parent[index]).find('.titolo').append(anteprimaGuida.anteprima.titolo);
           $('#'+parent[index]).find('.imgGuida').attr('src', anteprimaGuida.anteprima.immagine);
           $('#'+parent[index]).find('.imgGuida').attr('alt', anteprimaGuida.anteprima.titolo);
-          $('#'+parent[index]).find('.linkGuida').attr('href','/home/guideacquistotech/'+anteprimaGuida.anteprima.link);
+          $('#'+parent[index]).find('.linkGuida').attr('href','/home/tecnologia-guide-all-acquisto/'+anteprimaGuida.anteprima.link);
           $('#'+parent[index]).find('.testoPrev').append(anteprimaGuida.anteprima.anteprima);
           $('#'+parent[index]).find('.dataGuida').append(anteprimaGuida.anteprima.data)
         });
