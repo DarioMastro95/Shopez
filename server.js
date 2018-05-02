@@ -14,6 +14,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({ secret: 'jskdjsdksjdksjdkksdj', resave: false, saveUninitilized: true }));
 app.use('/', routes);
 app.set('view engine', 'ejs');
+app.use(function (req, res, next) {
+  if (req.headers['x-forwarded-proto'] !== 'https') {
+    const secureUrl = 'https://' + req.hostname + req.originalUrl
+    res.redirect(302, secureUrl)
+  }
+  next();
+});
 // create generator
 const generator = SitemapGenerator('https://www.shopezhub.com/', {
   stripQuerystring: false
